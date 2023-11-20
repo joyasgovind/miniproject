@@ -152,8 +152,11 @@
     <script src="script.js"></script>
 
     <script>
-        // Display a message for Android users
-        if (navigator.userAgent.match(/Android/i)) {
+        // Display a message for Android and iOS users
+        var userAgent = navigator.userAgent.toLowerCase();
+        if (userAgent.match(/android/i)) {
+            alert("This website is mainly made for desktop. For the best experience, please use a desktop browser.");
+        } else if (userAgent.match(/(iphone|ipod|ipad)/i)) {
             alert("This website is mainly made for desktop. For the best experience, please use a desktop browser.");
         }
     </script>
