@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booking History</title>
+    <style>
+        body {
+            background: url('flight back.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+
+        h1 { color: white; text-align: center; }
+
+        #bookingHistory {
+            max-width: 800px;
+            width: 100%;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            box-sizing: border-box;
+            margin-top: 20px;
+        }
+
+        p { margin: 10px 0; }
+
+        #cancelButton {
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 10px;
+            width: 150px;
+            font-size: 16px;
+            background-color: blue;
+            color: white;
+            border: none;
+        }
+
+        #referenceCodeInput {
+            margin: 10px;
+            padding: 5px;
+            width: 200px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Booking History</h1>
+    <div id="bookingHistory"></div>
+    <input type="text" placeholder="Enter reference code" id="referenceCodeInput">
+    <button onclick="cancelBooking()" id="cancelButton" disabled>Cancel Booking</button>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Retrieve booking history from localStorage
+            const bookingHistory = JSON.parse(localStorage.getItem('bookings')) || [];
+
+            console.log('Booking History:', bookingHistory);
+
+            const bookingHistoryDiv = document.getElementById('bookingHistory');
+            const referenceCodeInput = document.getElementById('referenceCodeInput');
+            const cancelButton = document.getElementById('cancelButton');
+
+            if (bookingHistory.length > 0) {
+                bookingHistory.forEach((booking, index) => {
+                    const flightDetails = booking.flightDetails;
+
+                    // Check if flightDetails is a valid object
+                    if (flightDetails && typeof flightDetails === 'object') {
+                        const referenceCode = booking.referenceCode;
+                        const timestamp = new Date(booking.timestamp).toLocaleString();
+
+                        // Display each booking entry
+                        const bookingEntry = document.createElement('div');
+                        bookingEntry.innerHTML = `<p><strong>Booking ${index + 1}</strong></p>
+                                                  <p>${flightDetails.airline || 'Unknown Airline'}</p>
+                                                  <p>${flightDetails.origin} - ${flightDetails.destination}</p>
+                                                  <p>Departure Time: ${flightDetails.departureTime || 'Unknown Time'}</p>
+                                                  <p>Flight Number: ${flightDetails.flightNumber || 'Unknown Flight Number'}</p>
+                                                  <p>Aircraft Model: ${flightDetails.aircraftModel || 'Unknown Model'}</p>
+                                                  <p>Available Seats: ${flightDetails.availableSeats || 'Unknown Seats'}</p>
+                                                  <p>Reference Code: ${referenceCode}</p>
+                                                  <p>Timestamp: ${timestamp}</p>
+                                                  <hr>`;
+                        bookingHistoryDiv.appendChild(bookingEntry);
+                    } else {
+                        console.error(`Invalid flightDetails for Booking ${index + 1}`);
+                    }
+                });
+            } else {
+                // Display a message if no booking history is available
+                bookingHistoryDiv.innerHTML = "<p>No booking history available.</p>";
+            }
+
+            // Add an event listener to enable the cancel button when a reference code is entered
+            referenceCodeInput.addEventListener('input', function () {
+                const referenceCode = this.value.trim();
+
+                cancelButton.disabled = referenceCode === '';
+            });
+        });
+
+        function cancelBooking() {
+            const referenceCode = referenceCodeInput.value.trim();
+
+            if (referenceCode === '') {
+                alert('Please enter a valid reference code.');
+                return;
+            }
+
+            // Confirm cancellation with the user
+            const isConfirmed = confirm('Are you sure you want to cancel this booking?');
+
+            if (isConfirmed) {
+                // Retrieve booking history from localStorage
+                const bookingHistory = JSON.parse(localStorage.getItem('bookings')) || [];
+
+                // Check if there is a booking with the entered reference code
+                const bookingIndex = bookingHistory.findIndex(booking => booking.referenceCode === referenceCode);
+
+                if (bookingIndex !== -1) {
+                    // Remove the booking with the entered reference code
+                    bookingHistory.splice(bookingIndex, 1);
+
+                    // Save the updated array back to localStorage
+                    localStorage.setItem('bookings', JSON.stringify(bookingHistory));
+
+                    // Refresh the page to reflect the changes
+                    location.reload();
+                } else {
+                    alert('Booking not found for the entered reference code.');
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
+

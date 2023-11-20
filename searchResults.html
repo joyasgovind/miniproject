@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flight Search Results</title>
+    <style>
+        body {
+            background: url('flight back.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        h1,
+        li,
+        button {
+            opacity: 0;
+            animation: fadeIn 1s ease-in-out forwards;
+        }
+
+        h1 {
+            color: white;
+            text-align: center;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: rgba(255, 255, 255, 0.8);
+            margin: 10px;
+            padding: 15px;
+            border-radius: 8px;
+        }
+
+        button {
+            padding: 10px;
+            background-color: orange;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #ff8c00;
+        }
+
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Available Flights</h1>
+    <div id="searchResults"></div>
+    <div id="showTicketsContainer" style="text-align: center; margin-top: 20px;"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const urlParams = new URLSearchParams(window.location.search);
+            const resultsParam = urlParams.get('results');
+
+            if (resultsParam) {
+                const results = JSON.parse(decodeURIComponent(resultsParam));
+
+                if (results.length > 0) {
+                    const resultList = document.getElementById('searchResults');
+                    const ul = document.createElement('ul');
+
+                    results.forEach(flight => {
+                        const li = document.createElement('li');
+                        li.innerHTML = `${flight.airline} - ${flight.price} INR <button onclick='bookFlight("${flight.airline}", ${flight.price}, "${flight.origin}", "${flight.destination}", "${flight.departureTime}", "${flight.flightNumber}", "${flight.aircraftModel}", ${flight.availableSeats})'>Book Now</button>`;
+                        ul.appendChild(li);
+                    });
+
+                    resultList.appendChild(ul);
+                } else {
+                    document.getElementById('searchResults').innerHTML = "<p>No flights found for the given criteria.</p>";
+                }
+            } else {
+                document.getElementById('searchResults').innerHTML = "<p>No results parameter found.</p>";
+            }
+        });
+
+        function bookFlight(airline, price, origin, destination, departureTime, flightNumber, aircraftModel, availableSeats) {
+            const flightDetails = {
+                airline,
+                origin,
+                destination,
+                departureTime,
+                flightNumber,
+                aircraftModel,
+                availableSeats
+            };
+
+            const bookingDetailsURL = `bookingDetails.html?flightDetails=${encodeURIComponent(JSON.stringify(flightDetails))}`;
+
+            window.location.href = bookingDetailsURL;
+        }
+    </script>
+</body>
+
+</html>
