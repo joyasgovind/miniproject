@@ -148,9 +148,15 @@
             </div>
         </div>
     </form>
-
-    <!-- Include the external script file -->
+<!-- Include the external script file -->
     <script src="script.js"></script>
+
+    <script>
+        // Display a message for Android users
+        if (navigator.userAgent.match(/Android/i)) {
+            alert("This website is mainly made for desktop. For the best experience, please use a desktop browser.");
+        }
+    </script>
 </body>
 
 </html>
