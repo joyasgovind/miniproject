@@ -100,30 +100,8 @@
             border: 1px solid #ccc;
             border-radius: 5px;
         }
-
-        .description {
-            margin-top: 15px;
-        }
-
-        .status {
-            margin-top: 10px;
-            font-weight: bold;
-        }
-
-        .status i {
-            margin-right: 5px; /* Adjust the spacing between icon and text */
-        }
-
-        .details-btn {
-            background-color: #4285f4;
-            color: #fff;
-            border: none;
-            padding: 10px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-
-        .details-modal {
+		
+		 .modal {
             display: none;
             position: fixed;
             top: 0;
@@ -135,22 +113,60 @@
             align-items: center;
         }
 
-        .details-content {
+        .modal-content {
             background-color: #fff;
             padding: 20px;
             border-radius: 8px;
-            width: 60%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            width: 400px;
             text-align: left;
         }
 
         .close-btn {
-            background-color: #4285f4;
+            cursor: pointer;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 1.2em;
+            color: #555;
+        }
+		
+		  .show-details-btn {
+            display: block;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #4285f4; /* Google Blue */
             color: #fff;
             border: none;
-            padding: 10px;
             border-radius: 5px;
             cursor: pointer;
         }
+		
+		#pagination-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        #pagination-container button {
+            background-color: #4285f4;
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        #pagination-container button:hover {
+            background-color: #2a4b8d;
+        }
+
+        #page-info {
+            font-size: 16px;
+            margin: 0 10px;
+        }
+
     </style>
 </head>
 
@@ -165,117 +181,89 @@
     </div>
 
     <div id="app-container"></div>
-
-    <div class="details-modal" id="detailsModal">
-        <div class="details-content">
+	
+     <!-- Add a modal for showing details -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
             <span class="close-btn" onclick="closeDetailsModal()">&times;</span>
-            <h2 id="detailsTitle"></h2>
-            <p id="detailsDescription"></p>
-            <p id="detailsStatus"></p>
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p id="modalVersion"></p>
+            <p id="modalSourceMaintainer"></p>
+            <p id="modalLastUpdated"></p>
+            <p id="modalStatus"></p>
+			<button class="ok-btn" onclick="closeDetailsModal()">OK</button>
         </div>
     </div>
- <script>
-  // Replace the placeholder link with the actual link from where to fetch the app information
-const appLink = 'https://raw.githubusercontent.com/swaggyP36000/TrollStore-IPAs/main/apps.json';
-const readmeFilePath = 'README.md';
+	
+	<!-- Add a new div for pagination controls -->
+    <div id="pagination-container">
+        <button onclick="prevPage()">Prev</button>
+        <span id="page-info">Page 1</span>
+        <button onclick="nextPage()">Next</button>
+    </div>
 
-let originalApps = [];
-let descriptions = {};
 
-fetch(appLink)
-    .then(response => response.json())
-    .then(apps => {
-        originalApps = apps.apps;
-        fetchReadme();
-    })
-    .then(() => {
-        displayApps(originalApps);
-    })
-    .catch(error => console.error('Error fetching data:', error));
+<script>
+    const appLink = 'https://raw.githubusercontent.com/swaggyP36000/TrollStore-IPAs/main/apps.json';
+    const mappingLink = 'https://raw.githubusercontent.com/joyasgovind/miniproject/main/mapped.json';
 
-// Fetch the README content using the fetch API
-function fetchReadme() {
-    return fetch(readmeFilePath)
-        .then(response => response.text())
-        .then(text => parseReadme(text))
-        .catch(error => console.error('Error fetching README:', error));
-}
+    let originalApps = [];
+    let appMappings = {};
+    const appsPerPage = 8;
+    let currentPage = 1;
 
-function parseReadme(text) {
-    const regex = /\| (\S+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \|/g;
-    let match;
+    // Fetch the mapping information
+    fetch(mappingLink)
+        .then(response => response.json())
+        .then(mappings => {
+            appMappings = mappings;
+        })
+        .catch(error => console.error('Error fetching mapping data:', error));
 
-    while ((match = regex.exec(text)) !== null) {
-        const appNameFromReadme = match[1].trim();
-        const description = match[2].trim();
-        const statusText = match[6].trim();
+    // Fetch the app information
+    fetch(appLink)
+        .then(response => response.json())
+        .then(apps => {
+            originalApps = apps.apps;
+            displayApps(originalApps);
+        })
+        .catch(error => console.error('Error fetching app data:', error));
 
-        // Find the matching app from the JSON data by comparing names
-        const matchedApp = originalApps.find(app => app.name === appNameFromReadme);
-
-        if (matchedApp) {
-            descriptions[matchedApp.name] = { description, statusText };
-        }
-    }
-}
-
-function getStatusEmoji(statusText) {
-    const emojiMap = {
-        ':white_check_mark:': '✅',
-        ':x:': '❌',
-        ':warning:': '⚠️',
-        ':no_entry_sign:': '🚫',
-        ':thumbsup:': '👍',
-        ':bulb:': '💡',
-        ':grey_question:': '❔',
-    };
-
-    const emojiCodes = statusText.match(/:[^:\s]+:/g) || [];
-    return emojiCodes.map(code => emojiMap[code] || code).join(' ');
-}
-
-function displayApps(apps) {
-    const appContainer = document.getElementById('app-container');
-    appContainer.innerHTML = '';
-
-    // Group apps by app name
-    const groupedApps = groupAppsByAppName(apps);
-
-    // Display a card for each app name
-    groupedApps.forEach(group => {
+    function createAppCard(app) {
         const appCard = document.createElement('div');
         appCard.classList.add('app-card');
 
         const img = document.createElement('img');
-        img.src = group[0].iconURL;
-        img.alt = group[0].name;
+        img.src = app.iconURL;
+        img.alt = app.name;
 
         const appName = document.createElement('h2');
-        appName.textContent = group[0].name;
+        appName.textContent = app.name;
 
         const appBundleId = document.createElement('p');
-        appBundleId.textContent = `Bundle ID: ${group[0].bundleIdentifier}`;
+        appBundleId.textContent = `Bundle ID: ${app.bundleIdentifier}`;
         appBundleId.classList.add('bundle-id');
 
         const appVersion = document.createElement('p');
-        appVersion.textContent = `Latest Version: ${group[0].version}`;
+        appVersion.textContent = `Latest Version: ${app.version}`;
 
         const appVersionDate = document.createElement('p');
-        appVersionDate.textContent = `Updated: ${group[0].versionDate}`;
+        appVersionDate.textContent = `Updated: ${app.versionDate}`;
 
         const appSize = document.createElement('p');
-        const sizeInMB = (group[0].size / (1024 * 1024)).toFixed(2);
+        const sizeInMB = (app.size / (1024 * 1024)).toFixed(2);
         appSize.textContent = `Size: ${sizeInMB} MB`;
 
         const downloadLink = document.createElement('a');
-        downloadLink.href = group[0].downloadURL;
+        downloadLink.href = app.downloadURL;
         downloadLink.textContent = 'Download';
         downloadLink.classList.add('download-link');
 
-        const detailsBtn = document.createElement('button');
-        detailsBtn.textContent = 'Show Details';
-        detailsBtn.classList.add('details-btn');
-        detailsBtn.onclick = () => showDetailsModal(group[0].name);
+        const showDetailsBtn = document.createElement('button');
+        showDetailsBtn.textContent = 'Show Details';
+        showDetailsBtn.classList.add('show-details-btn');
+        showDetailsBtn.onclick = () => showDetails(app.name.toLowerCase()); // Convert to lowercase for comparison
 
         appCard.appendChild(img);
         appCard.appendChild(appName);
@@ -284,50 +272,110 @@ function displayApps(apps) {
         appCard.appendChild(appVersionDate);
         appCard.appendChild(appSize);
         appCard.appendChild(downloadLink);
-        appCard.appendChild(detailsBtn);
+        appCard.appendChild(showDetailsBtn);
 
-        appContainer.appendChild(appCard);
-    });
-}
+        return appCard;
+    }
 
-function groupAppsByAppName(apps) {
-    const groupedApps = {};
-    apps.forEach(app => {
-        if (!groupedApps[app.name]) {
-            groupedApps[app.name] = [];
+    function displayApps(apps) {
+        const appContainer = document.getElementById('app-container');
+        appContainer.innerHTML = '';
+
+        const startIndex = (currentPage - 1) * appsPerPage;
+        const endIndex = startIndex + appsPerPage;
+        const slicedApps = apps.slice(startIndex, endIndex);
+
+        const groupedApps = groupAppsByAppName(slicedApps);
+
+        groupedApps.forEach(group => {
+            const appCard = createAppCard(group[0]);
+            appContainer.appendChild(appCard);
+        });
+
+        updatePageInfo();
+    }
+
+    function groupAppsByAppName(apps) {
+        const groupedApps = {};
+        apps.forEach(app => {
+            if (!groupedApps[app.name]) {
+                groupedApps[app.name] = [];
+            }
+            groupedApps[app.name].push(app);
+        });
+        return Object.values(groupedApps);
+    }
+
+    function filterApps() {
+        const searchInput = document.getElementById('search-bar').value.toLowerCase();
+        const filteredApps = originalApps.filter(app => app.name.toLowerCase().includes(searchInput));
+        displayApps(filteredApps);
+    }
+
+    function showDetails(appName) {
+        const detailsLink = 'https://raw.githubusercontent.com/joyasgovind/miniproject/main/table_data.json';
+        fetch(detailsLink)
+            .then(response => response.json())
+            .then(details => {
+                // First, try to find the app details directly
+                let appDetails = details.find(app => app['App Name'].toLowerCase() === appName.toLowerCase());
+
+                if (!appDetails) {
+                    // If direct match not found, check the mapping
+                    const mappedAppName = appMappings[appName.toLowerCase()];
+
+                    if (mappedAppName) {
+                        appDetails = details.find(app => app['App Name'].toLowerCase() === mappedAppName.toLowerCase());
+                    }
+                }
+
+                if (appDetails) {
+                    // Populate modal content
+                    document.getElementById('modalTitle').textContent = appDetails['App Name'];
+                    document.getElementById('modalDescription').textContent = `Description: ${appDetails.Description}`;
+                    document.getElementById('modalVersion').textContent = `Version: ${appDetails.Version}`;
+                    document.getElementById('modalSourceMaintainer').textContent = `Source/Maintainer: ${appDetails['Source/Maintainer']}`;
+                    document.getElementById('modalLastUpdated').textContent = `Last Updated: ${appDetails['Last Updated']}`;
+                    document.getElementById('modalStatus').textContent = `Status: ${appDetails.Status}`;
+
+                    // Display modal
+                    const modal = document.getElementById('detailsModal');
+                    modal.style.display = 'flex';
+                } else {
+                    alert(`Details not available for ${appName}`);
+                }
+            })
+            .catch(error => console.error('Error fetching details:', error));
+    }
+
+    function closeDetailsModal() {
+        const modal = document.getElementById('detailsModal');
+        modal.style.display = 'none';
+    }
+
+    function updatePageInfo() {
+        const pageInfo = document.getElementById('page-info');
+        pageInfo.textContent = `Page ${currentPage}`;
+    }
+
+    function nextPage() {
+        const totalApps = originalApps.length;
+        const totalPages = Math.ceil(totalApps / appsPerPage);
+
+        if (currentPage < totalPages) {
+            currentPage++;
+            displayApps(originalApps);
         }
-        groupedApps[app.name].push(app);
-    });
-    return Object.values(groupedApps);
-}
+    }
 
-function showDetailsModal(appName) {
-    const modal = document.getElementById('detailsModal');
-    const title = document.getElementById('detailsTitle');
-    const description = document.getElementById('detailsDescription');
-    const status = document.getElementById('detailsStatus');
-
-    title.textContent = appName;
-    description.textContent = descriptions[appName] ? descriptions[appName].description : '';
-    status.textContent = descriptions[appName] ? `Status: ${getStatusEmoji(descriptions[appName].statusText)}` : '';
-
-    modal.style.display = 'flex';
-}
-
-function closeDetailsModal() {
-    const modal = document.getElementById('detailsModal');
-    modal.style.display = 'none';
-}
-
-function filterApps() {
-    const searchInput = document.getElementById('search-bar').value.toLowerCase();
-    const filteredApps = originalApps.filter(app => app.name.toLowerCase().includes(searchInput));
-
-    displayApps(filteredApps);
-}
+    function prevPage() {
+        if (currentPage > 1) {
+            currentPage--;
+            displayApps(originalApps);
+        }
+    }
 </script>
 
-
-    
 </body>
+
 </html>
