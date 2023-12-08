@@ -175,158 +175,158 @@
         </div>
     </div>
  <script>
-    // Replace the placeholder link with the actual link from where to fetch the app information
-    const appLink = 'https://raw.githubusercontent.com/swaggyP36000/TrollStore-IPAs/main/apps.json';
-        const readmeLink = 'https://raw.githubusercontent.com/swaggyP36000/TrollStore-IPAs/main/README.md';
+  // Replace the placeholder link with the actual link from where to fetch the app information
+const appLink = 'https://raw.githubusercontent.com/swaggyP36000/TrollStore-IPAs/main/apps.json';
+const readmeFilePath = 'README.md';
 
-        let originalApps = [];
-        let descriptions = {};
+let originalApps = [];
+let descriptions = {};
 
-        fetch(appLink)
-            .then(response => response.json())
-            .then(apps => {
-                originalApps = apps.apps;
-                fetchReadme();
-            });
+fetch(appLink)
+    .then(response => response.json())
+    .then(apps => {
+        originalApps = apps.apps;
+        fetchReadme();
+    })
+    .then(() => {
+        displayApps(originalApps);
+    })
+    .catch(error => console.error('Error fetching data:', error));
 
-        function fetchReadme() {
-            fetch(readmeLink)
-                .then(response => response.text())
-                .then(text => parseReadme(text))
-                .catch(error => console.error('Error fetching README:', error));
+// Fetch the README content using the fetch API
+function fetchReadme() {
+    return fetch(readmeFilePath)
+        .then(response => response.text())
+        .then(text => parseReadme(text))
+        .catch(error => console.error('Error fetching README:', error));
+}
+
+function parseReadme(text) {
+    const regex = /\| (\S+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \|/g;
+    let match;
+
+    while ((match = regex.exec(text)) !== null) {
+        const appNameFromReadme = match[1].trim();
+        const description = match[2].trim();
+        const statusText = match[6].trim();
+
+        // Find the matching app from the JSON data by comparing names
+        const matchedApp = originalApps.find(app => app.name === appNameFromReadme);
+
+        if (matchedApp) {
+            descriptions[matchedApp.name] = { description, statusText };
         }
+    }
+}
 
-        function parseReadme(text) {
-            const regex = /\| (\S+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \| ([^|]+) \|/g;
-            let match;
+function getStatusEmoji(statusText) {
+    const emojiMap = {
+        ':white_check_mark:': '✅',
+        ':x:': '❌',
+        ':warning:': '⚠️',
+        ':no_entry_sign:': '🚫',
+        ':thumbsup:': '👍',
+        ':bulb:': '💡',
+        ':grey_question:': '❔',
+    };
 
-            while ((match = regex.exec(text)) !== null) {
-                const appNameFromReadme = match[1].trim();
-                const description = match[2].trim();
-                const statusText = match[6].trim();
+    const emojiCodes = statusText.match(/:[^:\s]+:/g) || [];
+    return emojiCodes.map(code => emojiMap[code] || code).join(' ');
+}
 
-                // Find the matching app from the JSON data by comparing names after removing spaces and converting to lowercase
-                const matchedApp = originalApps.find(app => cleanAndNormalizeName(app.name) === cleanAndNormalizeName(appNameFromReadme));
+function displayApps(apps) {
+    const appContainer = document.getElementById('app-container');
+    appContainer.innerHTML = '';
 
-                if (matchedApp) {
-                    descriptions[matchedApp.name] = { description, statusText };
-                }
-            }
+    // Group apps by app name
+    const groupedApps = groupAppsByAppName(apps);
 
-            displayApps(originalApps);
+    // Display a card for each app name
+    groupedApps.forEach(group => {
+        const appCard = document.createElement('div');
+        appCard.classList.add('app-card');
+
+        const img = document.createElement('img');
+        img.src = group[0].iconURL;
+        img.alt = group[0].name;
+
+        const appName = document.createElement('h2');
+        appName.textContent = group[0].name;
+
+        const appBundleId = document.createElement('p');
+        appBundleId.textContent = `Bundle ID: ${group[0].bundleIdentifier}`;
+        appBundleId.classList.add('bundle-id');
+
+        const appVersion = document.createElement('p');
+        appVersion.textContent = `Latest Version: ${group[0].version}`;
+
+        const appVersionDate = document.createElement('p');
+        appVersionDate.textContent = `Updated: ${group[0].versionDate}`;
+
+        const appSize = document.createElement('p');
+        const sizeInMB = (group[0].size / (1024 * 1024)).toFixed(2);
+        appSize.textContent = `Size: ${sizeInMB} MB`;
+
+        const downloadLink = document.createElement('a');
+        downloadLink.href = group[0].downloadURL;
+        downloadLink.textContent = 'Download';
+        downloadLink.classList.add('download-link');
+
+        const detailsBtn = document.createElement('button');
+        detailsBtn.textContent = 'Show Details';
+        detailsBtn.classList.add('details-btn');
+        detailsBtn.onclick = () => showDetailsModal(group[0].name);
+
+        appCard.appendChild(img);
+        appCard.appendChild(appName);
+        appCard.appendChild(appBundleId);
+        appCard.appendChild(appVersion);
+        appCard.appendChild(appVersionDate);
+        appCard.appendChild(appSize);
+        appCard.appendChild(downloadLink);
+        appCard.appendChild(detailsBtn);
+
+        appContainer.appendChild(appCard);
+    });
+}
+
+function groupAppsByAppName(apps) {
+    const groupedApps = {};
+    apps.forEach(app => {
+        if (!groupedApps[app.name]) {
+            groupedApps[app.name] = [];
         }
+        groupedApps[app.name].push(app);
+    });
+    return Object.values(groupedApps);
+}
 
-        function cleanAndNormalizeName(name) {
-            return name.replace(/\s/g, '').toLowerCase();
-        }
+function showDetailsModal(appName) {
+    const modal = document.getElementById('detailsModal');
+    const title = document.getElementById('detailsTitle');
+    const description = document.getElementById('detailsDescription');
+    const status = document.getElementById('detailsStatus');
 
-    function getStatusEmoji(statusText) {
-        const emojiMap = {
-            ':white_check_mark:': '✅',
-            ':x:': '❌',
-            ':warning:': '⚠️',
-            ':no_entry_sign:': '🚫',
-            ':thumbsup:': '👍',
-            ':bulb:': '💡',
-            ':grey_question:': '❔',
-        };
+    title.textContent = appName;
+    description.textContent = descriptions[appName] ? descriptions[appName].description : '';
+    status.textContent = descriptions[appName] ? `Status: ${getStatusEmoji(descriptions[appName].statusText)}` : '';
 
-        const emojiCodes = statusText.match(/:[^:\s]+:/g) || [];
-        return emojiCodes.map(code => emojiMap[code] || code).join(' ');
-    }
+    modal.style.display = 'flex';
+}
 
-    function displayApps(apps) {
-        const appContainer = document.getElementById('app-container');
-        appContainer.innerHTML = '';
+function closeDetailsModal() {
+    const modal = document.getElementById('detailsModal');
+    modal.style.display = 'none';
+}
 
-        // Group apps by app name
-        const groupedApps = groupAppsByAppName(apps);
+function filterApps() {
+    const searchInput = document.getElementById('search-bar').value.toLowerCase();
+    const filteredApps = originalApps.filter(app => app.name.toLowerCase().includes(searchInput));
 
-        // Display a card for each app name
-        groupedApps.forEach(group => {
-            const appCard = document.createElement('div');
-            appCard.classList.add('app-card');
-
-            const img = document.createElement('img');
-            img.src = group[0].iconURL;
-            img.alt = group[0].name;
-
-            const appName = document.createElement('h2');
-            appName.textContent = group[0].name;
-
-            const appBundleId = document.createElement('p');
-            appBundleId.textContent = `Bundle ID: ${group[0].bundleIdentifier}`;
-            appBundleId.classList.add('bundle-id');
-
-            const appVersion = document.createElement('p');
-            appVersion.textContent = `Latest Version: ${group[0].version}`;
-
-            const appVersionDate = document.createElement('p');
-            appVersionDate.textContent = `Updated: ${group[0].versionDate}`;
-
-            const appSize = document.createElement('p');
-            const sizeInMB = (group[0].size / (1024 * 1024)).toFixed(2);
-            appSize.textContent = `Size: ${sizeInMB} MB`;
-
-            const downloadLink = document.createElement('a');
-            downloadLink.href = group[0].downloadURL;
-            downloadLink.textContent = 'Download';
-            downloadLink.classList.add('download-link');
-
-            const detailsBtn = document.createElement('button');
-            detailsBtn.textContent = 'Show Details';
-            detailsBtn.classList.add('details-btn');
-            detailsBtn.onclick = () => showDetailsModal(group[0].name);
-
-            appCard.appendChild(img);
-            appCard.appendChild(appName);
-            appCard.appendChild(appBundleId);
-            appCard.appendChild(appVersion);
-            appCard.appendChild(appVersionDate);
-            appCard.appendChild(appSize);
-            appCard.appendChild(downloadLink);
-            appCard.appendChild(detailsBtn);
-
-            appContainer.appendChild(appCard);
-        });
-    }
-
-    function groupAppsByAppName(apps) {
-        const groupedApps = {};
-        apps.forEach(app => {
-            if (!groupedApps[app.name]) {
-                groupedApps[app.name] = [];
-            }
-            groupedApps[app.name].push(app);
-        });
-        return Object.values(groupedApps);
-    }
-
-    function showDetailsModal(appName) {
-        const modal = document.getElementById('detailsModal');
-        const title = document.getElementById('detailsTitle');
-        const description = document.getElementById('detailsDescription');
-        const status = document.getElementById('detailsStatus');
-
-        title.textContent = appName;
-        description.textContent = descriptions[appName] ? descriptions[appName].description : '';
-        status.textContent = descriptions[appName] ? `Status: ${getStatusEmoji(descriptions[appName].statusText)}` : '';
-
-        modal.style.display = 'flex';
-    }
-
-    function closeDetailsModal() {
-        const modal = document.getElementById('detailsModal');
-        modal.style.display = 'none';
-    }
-
-    function filterApps() {
-        const searchInput = document.getElementById('search-bar').value.toLowerCase();
-        const filteredApps = originalApps.filter(app => app.name.toLowerCase().includes(searchInput));
-
-        displayApps(filteredApps);
-    }
+    displayApps(filteredApps);
+}
 </script>
+
 
     
 </body>
