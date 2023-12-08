@@ -7,6 +7,36 @@
     <title>SwaggyP36000 IPA Library</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
+	.header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1em 20px;
+            background-color: #333; /* Dark background color */
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .header-button {
+            background-color: #4285f4; /* Google Blue */
+            color: #fff;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .header-button:hover {
+            background-color: #2a4b8d;
+        }
+
+        
         body {
             font-family: Arial, sans-serif;
             margin: 0;
@@ -166,7 +196,8 @@
             font-size: 16px;
             margin: 0 10px;
         }
-
+		
+		
     </style>
 </head>
 
@@ -175,6 +206,10 @@
     <header>
         <h1>SwaggyP36000 IPA Library</h1>
     </header>
+	<div class="header-buttons">
+            <button class="header-button releases-button" onclick="openReleasesPage()">Releases</button>
+            <button class="header-button status-guide-button" onclick="openStatusGuide()">Status Guide</button>
+        </div>
 
     <div class="search-container">
         <input type="text" id="search-bar" placeholder="Search for apps..." oninput="filterApps()">
@@ -306,10 +341,14 @@
         return Object.values(groupedApps);
     }
 
-    function filterApps() {
+     function filterApps() {
         const searchInput = document.getElementById('search-bar').value.toLowerCase();
         const filteredApps = originalApps.filter(app => app.name.toLowerCase().includes(searchInput));
         displayApps(filteredApps);
+
+        // Update pagination visibility
+        const paginationContainer = document.getElementById('pagination-container');
+        paginationContainer.style.display = searchInput ? 'none' : 'block';
     }
 
     function showDetails(appName) {
@@ -359,22 +398,42 @@
     }
 
     function nextPage() {
-        const totalApps = originalApps.length;
-        const totalPages = Math.ceil(totalApps / appsPerPage);
+    const totalApps = originalApps.length;
+    const totalPages = Math.ceil(totalApps / appsPerPage);
 
-        if (currentPage < totalPages) {
-            currentPage++;
-            displayApps(originalApps);
-        }
+    if (currentPage < totalPages) {
+        currentPage++;
+        displayApps(originalApps);
+        scrollToTop();
     }
+}
 
-    function prevPage() {
-        if (currentPage > 1) {
-            currentPage--;
-            displayApps(originalApps);
-        }
+function prevPage() {
+    if (currentPage > 1) {
+        currentPage--;
+        displayApps(originalApps);
+        scrollToTop();
     }
+}
+
+function scrollToTop() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+}
+
+// Function to open the Releases page in a new tab
+        function openReleasesPage() {
+            window.open('releasetest.html', '_blank');
+        }
+
+        // Function to open the Status Guide page in a new tab
+        function openStatusGuide() {
+            window.open('statusguide.html', '_blank');
+        }
 </script>
+
 
 </body>
 
