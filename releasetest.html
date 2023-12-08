@@ -259,20 +259,23 @@
 
         // Function to toggle download links visibility
         function toggleDownloadLinks(viewDownloadsElement) {
-            const downloadContainer = viewDownloadsElement.parentElement.querySelector('.download-links');
-            const isVisible = window.getComputedStyle(downloadContainer).display !== 'none';
+    const downloadContainer = viewDownloadsElement.parentElement.querySelector('.download-links');
+    const isVisible = window.getComputedStyle(downloadContainer).visibility === 'visible';
 
-            if (isVisible) {
-                downloadContainer.style.display = 'none';
-            } else {
-                // Close other open download links
-                document.querySelectorAll('.download-links').forEach(container => {
-                    container.style.display = 'none';
-                });
+    if (isVisible) {
+        downloadContainer.style.visibility = 'hidden';
+        downloadContainer.style.position = 'absolute';
+    } else {
+        // Close other open download links
+        document.querySelectorAll('.download-links').forEach(container => {
+            container.style.visibility = 'hidden';
+            container.style.position = 'absolute';
+        });
 
-                downloadContainer.style.display = 'block';
-            }
-        }
+        downloadContainer.style.visibility = 'visible';
+        downloadContainer.style.position = 'static';
+    }
+}
 		
 // Function to display releases based on pagination
 function displayReleases() {
