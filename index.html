@@ -13,6 +13,7 @@
             padding: 0;
             background-color: #121212; /* Dark Background */
             color: #fff; /* White Text */
+	    min-height: 100vh; /* Set minimum height to fill the viewport */
         }
 
         header {
@@ -87,19 +88,18 @@
             flex-direction: column;
         }
 
-	    /* Adjust the layout for screens larger than 600px and smaller than 900px */
-@media screen and (min-width: 600px) and (max-width: 899px) {
-    .app-card {
-        /* Display two cards per row on larger screens */
-        width: calc(50% - 20px);
+	    /* Additional CSS for mobile devices */
+@media screen and (max-width: 600px) {
+    #app-container {
+        flex-direction: column; /* Stack app cards vertically on smaller screens */
     }
-}
 
-/* Existing CSS for screens larger than 900px */
-@media screen and (min-width: 900px) {
     .app-card {
-        /* Adjust the width for even larger screens, e.g., three cards per row */
-        width: calc(33.33% - 20px);
+        width: 100%; /* Take full width on smaller screens */
+    }
+
+    #pagination-container {
+        order: 2; /* Set the order to 2 to move pagination to the bottom */
     }
 }
         .app-card:hover {
@@ -192,7 +192,8 @@
         #pagination-container {
             text-align: center;
             margin-top: 20px;
-        }
+	    margin-top: auto; /* Move pagination to the bottom */
+	}
 
         #pagination-container button {
             background-color: #007aff; /* iOS Blue Pagination Button */
