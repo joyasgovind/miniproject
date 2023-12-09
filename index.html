@@ -65,12 +65,12 @@
             background-color: #333; /* Dark Gray Background */
         }
 
-        #app-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
-        }
+       #app-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
 
         .app-card {
             background-color: #333; /* Dark Gray Card */
@@ -79,13 +79,29 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin: 10px;
             padding: 20px;
-            width: calc(33.33% - 20px);
+            width: 100%;
             box-sizing: border-box;
             transition: transform 0.3s;
             cursor: pointer;
             display: flex;
             flex-direction: column;
         }
+
+	    /* Additional CSS for larger screens */
+@media screen and (min-width: 600px) {
+    .app-card {
+        /* Adjust the width for larger screens, e.g., two cards per row */
+        width: calc(50% - 20px);
+    }
+}
+
+/* Additional CSS for even larger screens */
+@media screen and (min-width: 900px) {
+    .app-card {
+        /* Adjust the width for even larger screens, e.g., three cards per row */
+        width: calc(33.33% - 20px);
+    }
+}
 
         .app-card:hover {
             transform: scale(1.05);
