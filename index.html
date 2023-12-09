@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
     <title>SwaggyP36000 IPA Library</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -13,7 +13,6 @@
             padding: 0;
             background-color: #121212; /* Dark Background */
             color: #fff; /* White Text */
-	    min-height: 100vh; /* Set minimum height to fill the viewport */
         }
 
         header {
@@ -66,12 +65,12 @@
             background-color: #333; /* Dark Gray Background */
         }
 
-       #app-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
+        #app-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
 
         .app-card {
             background-color: #333; /* Dark Gray Card */
@@ -80,7 +79,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin: 10px;
             padding: 20px;
-            width: 100%;
+            width: calc(33.33% - 20px);
             box-sizing: border-box;
             transition: transform 0.3s;
             cursor: pointer;
@@ -88,32 +87,18 @@
             flex-direction: column;
         }
 
-	    /* Additional CSS for mobile devices */
-@media screen and (max-width: 600px) {
-    #app-container {
-        flex-direction: column; /* Stack app cards vertically on smaller screens */
-    }
-
-    .app-card {
-        width: 100%; /* Take full width on smaller screens */
-    }
-
-    #pagination-container {
-        order: 2; /* Set the order to 2 to move pagination to the bottom */
-    }
-}
         .app-card:hover {
             transform: scale(1.05);
         }
 
-      img {
-    width: 150px; /* Set a fixed width */
-    height: 150px; /* Set a fixed height */
-    object-fit: cover; /* Maintain aspect ratio and cover the entire space */
-    border-radius: 8px;
-    margin: 0 auto; /* Center the image horizontally using margin */
-    margin-bottom: 15px;
-}
+        img {
+            width: 150px; /* Set a fixed width */
+            height: 150px; /* Set a fixed height */
+            object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+            border-radius: 8px;
+            margin: 0 auto; /* Center the image horizontally using margin */
+            margin-bottom: 15px;
+        }
 
         h2 {
             font-size: 1.8em; /* Increased Font Size for App Name */
@@ -134,11 +119,11 @@
             color: #007aff; /* iOS Blue Link */
             font-size: 16px;
         }
-		
-		/* Hide the modal initially */
-.modal {
-    display: none;
-}
+
+        /* Hide the modal initially */
+        .modal {
+            display: none;
+        }
 
         .modal-content {
             background-color: #444; /* Dark Gray Modal */
@@ -154,8 +139,7 @@
             transform: translate(-50%, -50%);
         }
 
-     
-       	 .ok-btn {
+        .ok-btn {
             display: block;
             margin-top: 20px;
             padding: 10px;
@@ -189,11 +173,31 @@
             background-color: #0056b3; /* Darker Blue on Hover */
         }
 
+        @media only screen and (max-width: 600px) {
+            .app-card {
+                width: calc(100% - 20px);
+            }
+
+            #search-bar {
+                width: 100%;
+            }
+
+            .header-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            h1 {
+                font-size: 1.5em;
+            }
+
+            /* ... (other adjustments for smaller screens) ... */
+        }
+
         #pagination-container {
             text-align: center;
             margin-top: 20px;
-	    margin-top: auto; /* Move pagination to the bottom */
-	}
+        }
 
         #pagination-container button {
             background-color: #007aff; /* iOS Blue Pagination Button */
@@ -445,12 +449,12 @@ function scrollToTop() {
 
 // Function to open the Releases page in a new tab
         function openReleasesPage() {
-            window.open('releasetest.html', '_blank');
+            window.open('contents/releasetest.html', '_blank');
         }
 
         // Function to open the Status Guide page in a new tab
         function openStatusGuide() {
-            window.open('statusguide.html', '_blank');
+            window.open('contents/statusguide.html', '_blank');
         }
 </script>
 
