@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>SwaggyP36000 IPA Library</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
@@ -11,12 +11,12 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f8f8; /* Light Background */
-            color: #333; /* Dark Text */
+            background-color: #121212; /* Dark Background */
+            color: #fff; /* Light Text */
         }
 
         header {
-            background-color: #007aff; /* iOS Blue Header */
+            background-color: #212121; /* Dark Header */
             text-align: center;
             padding: 1em 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -24,7 +24,7 @@
 
         h1 {
             margin: 0;
-            font-size: 1.5em;
+            font-size: 1.8em;
             color: #fff; /* White Text */
         }
 
@@ -32,96 +32,122 @@
             display: flex;
             justify-content: center;
             gap: 20px;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         .header-button {
-            background-color: #fff; /* White Button */
-            color: #007aff; /* iOS Blue Text */
+            background-color: #333; /* Dark Button */
+            color: #fff; /* White Text */
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
             transition: background-color 0.3s, color 0.3s;
         }
 
         .header-button:hover {
-            background-color: #007aff; /* iOS Blue Button on Hover */
-            color: #fff; /* White Text on Hover */
+            background-color: #555; /* Darker Button on Hover */
         }
 
         .search-container {
             text-align: center;
-            margin: 10px 0;
+            margin: 20px 0;
         }
 
         #search-bar {
-            padding: 10px;
-            width: 90%;
-            border: 1px solid #ccc; /* Light Border */
-            border-radius: 5px;
-            font-size: 14px;
-            color: #333; /* Dark Text */
-            background-color: #fff; /* White Background */
+            padding: 12px;
+            width: 50%;
+            border: 1px solid #444; /* Lighter Border */
+            border-radius: 25px; /* Rounded Search Bar */
+            font-size: 16px;
+            color: #fff; /* Light Text */
+            background-color: #333; /* Darker Background */
+            box-sizing: border-box;
+            transition: width 0.3s;
+        }
+
+        #search-bar:focus {
+            width: 70%;
         }
 
         #app-container {
-            padding: 10px;
+            padding: 20px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: space-between;
         }
 
         .app-card {
-            background-color: #fff; /* White Card Background */
-            color: #333; /* Dark Text */
-            border-radius: 8px;
+            background-color: #333; /* Dark Card Background */
+            color: #fff; /* Light Text */
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            margin: 10px 5px;
-            padding: 15px;
-            width: calc(50% - 10px);
+            margin: 20px;
+            padding: 20px;
+            width: calc(50% - 40px);
             box-sizing: border-box;
             transition: box-shadow 0.3s;
             cursor: pointer;
             position: relative;
+            overflow: hidden;
         }
 
         .app-card:hover {
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
         }
 
-        .app-image {
-            width: 100%;
-            height: 120px;
-            object-fit: cover;
-            border-radius: 8px;
-            margin-bottom: 10px;
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        
+      img {
+    width: 50%;
+    height: 50;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 15px;
+    display: block;
+    margin: auto; /* Center the image horizontally */
+}
 
         h2 {
-            font-size: 1.2em;
-            margin-bottom: 5px;
-            color: #333; /* Dark Text */
+            font-size: 1.4em;
+            margin-bottom: 10px;
+            color: #fff; /* Light Text */
         }
 
         p {
-            margin-bottom: 5px;
-            color: #555; /* Gray Text */
+            margin-bottom: 10px;
+            color: #ccc; /* Lighter Gray Text */
         }
 
-        .download-link {
-            display: block;
-            margin-top: 5px;
-            text-decoration: none;
-            color: #007aff; /* iOS Blue Link */
-            font-size: 14px;
-        }
+.download-link {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 20px;
+  border-radius: 5px;
+  background-color: #00FF00; /* Green */
+  color: #fff;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  transition: all 0.3s ease-in-out;
+}
 
-        /* Hide the modal initially */
+.download-link::before {
+  content: "\f0ab"; /* Font Awesome download icon code */
+  font-family: FontAwesome;
+  margin-right: 5px;
+  font-size: 15px;
+}
+
+.download-link:hover {
+  background-color: #009e7a; /* Darker green on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
         .modal {
             display: none;
             position: fixed;
@@ -135,84 +161,101 @@
         }
 
         .modal-content {
-            background-color: #fff; /* White Modal Background */
-            color: #333; /* Dark Text */
-            padding: 15px;
-            border-radius: 8px;
+            background-color: #333; /* Dark Modal Background */
+            color: #fff; /* Light Text */
+            padding: 20px;
+            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 90%; /* Adjust the max-width as needed */
+            max-width: 80%;
             text-align: left;
             position: relative;
         }
 
         .ok-btn {
             display: block;
-            margin-top: 10px;
-            padding: 10px;
+            margin-top: 20px;
+			margin: auto;
+            padding: 12px;
             background-color: #007aff; /* iOS Blue Button */
             color: #fff;
             border: none;
             border-radius: 5px;
             cursor: pointer;
-            font-size: 14px;
+            font-size: 16px;
+            font-weight: bold;
             transition: background-color 0.3s;
         }
 
         .ok-btn:hover {
             background-color: #0056b3; /* Darker Blue on Hover */
         }
+		
+		.show-details-btn,
+.download-link {
+  margin: 10px auto; /* Add margin-top and margin-bottom */
+}
 
-        .show-details-btn {
-            display: block;
-            margin-top: 10px;
-            padding: 10px;
-            background-color: #007aff; /* iOS Blue Button */
-            color: #fff;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            font-size: 14px;
-            transition: background-color 0.3s;
-        }
+.show-details-btn {
+  display: block;
+  margin: auto;
+  padding: 10px;
+  background-color: #FFFFFF; /* iOS Blue Button */
+  color: #111111;
+  border: none;
+  border-radius: 4px; /* Change to same radius as download-link */
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: bold;
+  transition: all 0.3s ease-in-out;
+  width: 80px;
+  text-align: center; /* Center text within the button */
+}
 
-        .show-details-btn:hover {
-            background-color: #0056b3; /* Darker Blue on Hover */
-        }
+.show-details-btn::before {
+  content: "\f05a"; /* Font Awesome download icon code */
+  font-family: FontAwesome;
+  margin-right: 5px;
+  font-size: 15px;
+}
 
-        /* Adjustments for mobile devices */
+.show-details-btn:hover {
+  background-color: #005f83; /* Darker blue on hover */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
         @media only screen and (max-width: 600px) {
             .app-card {
-                width: calc(100% - 10px);
+                width: calc(100% - 45px);
             }
 
             #search-bar {
-                width: 100%;
+                width: 60%;
             }
 
             .header-buttons {
-                flex-direction: column;
+                flex-direction: row;
                 align-items: center;
             }
 
             h1 {
-                font-size: 1.2em;
+                font-size: 1.4em;
             }
 
             .modal-content {
-                max-width: 90%;
+                max-width: 80%;
             }
         }
 
         #pagination-container {
             text-align: center;
-            margin-top: 10px;
+            margin-top: 20px;
         }
 
         #pagination-container button {
             background-color: #007aff; /* iOS Blue Pagination Button */
             color: #fff;
             border: none;
-            padding: 10px 15px;
+            padding: 12px;
             margin: 0 5px;
             cursor: pointer;
             border-radius: 5px;
@@ -225,8 +268,8 @@
         }
 
         #page-info {
-            font-size: 14px;
-            margin: 0 5px;
+            font-size: 18px;
+            margin: 0 10px;
         }
     </style>
 </head>
@@ -248,29 +291,27 @@
 
     <div id="app-container"></div>
 
-   <!-- Add a modal for showing details -->
-<div id="detailsModal" class="modal" style="display: none;">
-    <div class="modal-content">       
-        <h2 id="modalTitle"></h2>
-        <p id="modalDescription"></p>
-        <p id="modalVersion"></p>
-        <p id="modalSourceMaintainer"></p>
-        <p id="modalLastUpdated"></p>
-        <p id="modalStatus"></p>
-        <button class="ok-btn" onclick="closeDetailsModal()">OK</button>
+    <div id="detailsModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h2 id="modalTitle"></h2>
+            <p id="modalDescription"></p>
+            <p id="modalVersion"></p>
+            <p id="modalSourceMaintainer"></p>
+            <p id="modalLastUpdated"></p>
+            <p id="modalStatus"></p>
+            <button class="ok-btn" onclick="closeDetailsModal()">OK</button>
+        </div>
     </div>
-</div>
 
-    <!-- Add a new div for pagination controls -->
     <div id="pagination-container">
         <button onclick="prevPage()">Prev</button>
         <span id="page-info">Page 1</span>
         <button onclick="nextPage()">Next</button>
     </div>
-
 </body>
 
 </html>
+
 
 <script>
     const appLink = 'https://raw.githubusercontent.com/swaggyP36000/TrollStore-IPAs/main/apps.json';
@@ -329,7 +370,7 @@
         downloadLink.classList.add('download-link');
 
         const showDetailsBtn = document.createElement('button');
-        showDetailsBtn.textContent = 'Show Details';
+        showDetailsBtn.textContent = 'Details';
         showDetailsBtn.classList.add('show-details-btn');
         showDetailsBtn.onclick = () => showDetails(app.name.toLowerCase()); // Convert to lowercase for comparison
 
@@ -458,12 +499,12 @@ function scrollToTop() {
 
 // Function to open the Releases page in a new tab
         function openReleasesPage() {
-            window.open('contents/releasetest.html', '_blank');
+            window.open('releasetest.html', '_blank');
         }
 
         // Function to open the Status Guide page in a new tab
         function openStatusGuide() {
-            window.open('contents/statusguide.html', '_blank');
+            window.open('statusguide.html', '_blank');
         }
 </script>
 
