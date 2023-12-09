@@ -11,12 +11,12 @@
             font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #121212; /* Dark Background */
-            color: #fff; /* White Text */
+            background-color: #f8f8f8; /* Light Background */
+            color: #333; /* Dark Text */
         }
 
         header {
-            background-color: #121212; /* Dark Header */
+            background-color: #007aff; /* iOS Blue Header */
             text-align: center;
             padding: 1em 0;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -24,7 +24,7 @@
 
         h1 {
             margin: 0;
-            font-size: 2em;
+            font-size: 1.5em;
             color: #fff; /* White Text */
         }
 
@@ -36,18 +36,19 @@
         }
 
         .header-button {
-            background-color: #007aff; /* iOS Blue Button */
-            color: #fff;
+            background-color: #fff; /* White Button */
+            color: #007aff; /* iOS Blue Text */
             border: none;
             padding: 10px 20px;
             border-radius: 5px;
             cursor: pointer;
             font-size: 16px;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, color 0.3s;
         }
 
         .header-button:hover {
-            background-color: #0056b3; /* Darker Blue on Hover */
+            background-color: #007aff; /* iOS Blue Button on Hover */
+            color: #fff; /* White Text on Hover */
         }
 
         .search-container {
@@ -58,58 +59,53 @@
         #search-bar {
             padding: 10px;
             width: 80%;
-            border: 1px solid #555; /* Dark Border */
+            border: 1px solid #ccc; /* Light Border */
             border-radius: 5px;
             font-size: 16px;
-            color: #fff; /* White Text */
-            background-color: #333; /* Dark Gray Background */
+            color: #333; /* Dark Text */
+            background-color: #fff; /* White Background */
         }
 
         #app-container {
+            padding: 20px;
             display: flex;
             flex-wrap: wrap;
-            justify-content: center;
-            padding: 20px;
+            justify-content: space-between;
         }
 
         .app-card {
-            background-color: #333; /* Dark Gray Card */
-            color: #fff; /* White Text */
+            background-color: #fff; /* White Card Background */
+            color: #333; /* Dark Text */
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin: 10px;
             padding: 20px;
-            width: calc(33.33% - 20px);
+            width: calc(50% - 20px);
             box-sizing: border-box;
-            transition: transform 0.3s;
+            transition: box-shadow 0.3s;
             cursor: pointer;
-            display: flex;
-            flex-direction: column;
         }
 
         .app-card:hover {
-            transform: scale(1.05);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
         }
 
         img {
-            width: 150px; /* Set a fixed width */
-            height: 150px; /* Set a fixed height */
-            object-fit: cover; /* Maintain aspect ratio and cover the entire space */
+            width: 100%;
+            height: auto;
             border-radius: 8px;
-            margin: 0 auto; /* Center the image horizontally using margin */
             margin-bottom: 15px;
         }
 
         h2 {
-            font-size: 1.8em; /* Increased Font Size for App Name */
+            font-size: 1.2em;
             margin-bottom: 10px;
-            color: #fff; /* White Text */
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Different Font Family */
+            color: #333; /* Dark Text */
         }
 
         p {
             margin-bottom: 10px;
-            color: #fff; /* White Text */
+            color: #555; /* Gray Text */
         }
 
         .download-link {
@@ -120,78 +116,10 @@
             font-size: 16px;
         }
 
-        /* Hide the modal initially */
-        .modal {
-            display: none;
-        }
-
-        .modal-content {
-            background-color: #444; /* Dark Gray Modal */
-            color: #fff; /* White Text */
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 400px;
-            text-align: left;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-
-        .ok-btn {
-            display: block;
-            margin-top: 20px;
-            padding: 10px;
-            background-color: #007aff; /* iOS Blue Button */
-            color: #fff;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .ok-btn:hover {
-            background-color: #0056b3; /* Darker Blue on Hover */
-        }
-
-        .show-details-btn {
-            display: block;
-            margin-top: auto;
-            padding: 15px; /* Increased Padding for a Bolder Look */
-            background-color: #007aff; /* iOS Blue Button */
-            color: #fff;
-            border: none;
-            border-radius: 8px; /* Increased Border Radius for a Softer Look */
-            cursor: pointer;
-            font-size: 16px;
-            transition: background-color 0.3s;
-        }
-
-        .show-details-btn:hover {
-            background-color: #0056b3; /* Darker Blue on Hover */
-        }
-
-        @media only screen and (max-width: 600px) {
+        @media only screen and (max-width: 768px) {
             .app-card {
                 width: calc(100% - 20px);
             }
-
-            #search-bar {
-                width: 100%;
-            }
-
-            .header-buttons {
-                flex-direction: column;
-                align-items: center;
-            }
-
-            h1 {
-                font-size: 1.5em;
-            }
-
-            /* ... (other adjustments for smaller screens) ... */
         }
 
         #pagination-container {
