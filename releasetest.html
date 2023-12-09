@@ -11,12 +11,12 @@
             font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f8f9fa;
-            color: #24292e; /* GitHub Text Color */
+            background-color: #121212; /* Dark Background */
+            color: #fff; /* White Text */
         }
 
         header {
-            background-color: #4285f4; /* Google Blue */
+            background: linear-gradient(to right, #007aff, #0056b3); /* Gradient Header Background */
             color: #fff;
             text-align: center;
             padding: 1em;
@@ -24,17 +24,20 @@
         }
 
         .release-container {
-            max-width: 800px;
+            max-width: 90%;
             margin: 20px auto;
             padding: 20px;
             box-sizing: border-box;
+            background-color: #1f1f1f; /* Dark Container */
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
         }
 
         .release-card {
-            background-color: #fff;
-            border: 1px solid #e1e4e8; /* GitHub Border Color */
-            border-radius: 6px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: #333; /* Dark Gray Card */
+            border: 1px solid #555; /* Dark Border */
+            border-radius: 10px;
+            box-shadow: 0 2px 4px rgba(255, 255, 255, 0.1);
             margin-bottom: 20px;
             padding: 20px;
             transition: transform 0.3s, box-shadow 0.3s;
@@ -45,13 +48,13 @@
 
         .release-card:hover {
             transform: scale(1.02);
-            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.2);
         }
 
         h2 {
-            color: #0366d6; /* GitHub Blue */
-            font-size: 1.8em;
-            margin-bottom: 12px;
+            color: #fff; /* White Text */
+            font-size: 1.6em;
+            margin-bottom: 10px;
             display: inline-block;
             position: relative;
         }
@@ -69,9 +72,9 @@
         }
 
         .date {
-            color: #586069; /* GitHub Gray */
+            color: #bbb; /* Light Gray */
             font-weight: bold;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
 
         ul {
@@ -82,31 +85,29 @@
 
         li {
             margin-bottom: 10px;
-            color: #24292e; /* GitHub Text Color */
+            color: #ddd; /* Light Gray Text */
         }
 
         strong {
-            color: #0366d6; /* GitHub Blue */
+            color: #007aff; /* iOS Blue */
         }
 
         em {
-            color: #6a737d; /* GitHub Light Gray */
+            color: #bbb; /* Light Gray */
         }
 
         a {
-            color: #0366d6; /* GitHub Blue */
+            color: #50C878; /* green */
             text-decoration: none;
-            border-bottom: 1px solid #0366d6;
             cursor: pointer;
         }
 
         a:hover {
-            color: #032f62; /* GitHub Darker Blue on Hover */
-            border-bottom: 1px solid #032f62;
+            color: #228B22; /* Darker green on hover */
         }
 
         .view-downloads {
-            background-color: #0366d6; /* GitHub Blue */
+            background-color: #007aff; /* iOS Blue */
             color: #fff;
             border: none;
             padding: 8px 16px;
@@ -115,10 +116,12 @@
             font-size: 14px;
             margin-top: 10px;
             outline: none;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .view-downloads:hover {
-            background-color: #032f62; /* GitHub Darker Blue on Hover */
+            background-color: #0056b3; /* Darker Blue on Hover */
         }
 
         .download-links {
@@ -127,24 +130,26 @@
         }
 
         .download-link {
-            background-color: #f1f8ff; /* Light Blue */
-            color: #0366d6; /* GitHub Blue */
+            background-color: #6CB4EE; /* Dark Gray Card */
+            color: #000000; /* iOS Blue */
             padding: 8px 16px;
             margin-top: 8px;
             border-radius: 4px;
             display: block;
             text-decoration: none;
             transition: background-color 0.3s, color 0.3s;
+            width: 100%;
+            box-sizing: border-box;
         }
 
         .download-link:hover {
-            background-color: #e6f3ff; /* Lighter Blue on Hover */
-            color: #032f62; /* GitHub Darker Blue on Hover */
+            background-color: #6CB4EE; /* Darker Gray on Hover */
+            color: #D0F0C0; /* Darker Blue on Hover */
         }
 
         .pagination-container {
             display: flex;
-            flex-direction: column;
+            justify-content: center;
             align-items: center;
             margin-top: 20px;
         }
@@ -154,10 +159,11 @@
             justify-content: center;
             align-items: center;
             margin-top: 10px;
+            flex-wrap: wrap;
         }
 
         .pagination button {
-            background-color: #0366d6;
+            background-color: #007aff; /* iOS Blue */
             color: #fff;
             border: none;
             padding: 8px 16px;
@@ -165,11 +171,13 @@
             cursor: pointer;
             font-size: 14px;
             outline: none;
-            margin: 0 5px;
+            margin: 5px;
+            flex-grow: 1;
+            box-sizing: border-box;
         }
 
         .pagination button:hover {
-            background-color: #032f62;
+            background-color: #0056b3; /* Darker Blue on Hover */
         }
     </style>
 </head>
@@ -177,7 +185,7 @@
 <body>
 
     <header>
-        <h1>TrollStore IPA Releases</h1>
+        <h1 style="margin: 0;">TrollStore IPA Releases</h1>
     </header>
 
     <div class="release-container" id="release-container">
@@ -187,12 +195,12 @@
     <div class="pagination-container">
         <div class="pagination">
             <button onclick="prevPage()">Prev</button>
-            <div id="page-number">Page 1</div>
+            <div id="page-number" style="margin: 0 10px;">Page 1</div>
             <button onclick="nextPage()">Next</button>
         </div>
     </div>
 
-    <script>
+       <script>
         let releasesData = [];
         const releasesPerPage = 10;
         let currentPage = 1;
@@ -256,9 +264,10 @@
 
             return releaseCard;
         }
+		
+		//visible-invisible on toggle
 
-        // Function to toggle download links visibility
-        function toggleDownloadLinks(viewDownloadsElement) {
+       function toggleDownloadLinks(viewDownloadsElement) {
     const downloadContainer = viewDownloadsElement.parentElement.querySelector('.download-links');
     const isVisible = window.getComputedStyle(downloadContainer).visibility === 'visible';
 
