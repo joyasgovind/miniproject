@@ -59,17 +59,31 @@
             position: relative;
         }
 
-        .latest-tag {
-            background-color: #28a745; /* GitHub Green for Latest */
-            color: #fff;
-            font-size: 12px;
-            padding: 3px 8px;
-            border-radius: 3px;
-            margin-left: 10px;
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-        }
+        /* Original styles for large screens */
+.latest-tag {
+    background-color: #28a745; /* GitHub Green for Latest */
+    color: #fff;
+    font-size: 12px;
+    padding: 3px 8px;
+    border-radius: 3px;
+    margin-left: 10px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Adjust styles for smaller screens using media query */
+@media screen and (max-width: 600px) {
+    .latest-tag {
+        position: relative;
+        top: auto;
+        transform: none;
+        margin-left: 0;
+        margin-top: 10px; /* Add spacing between title and tag */
+        display: block;
+        text-align: center;
+    }
+}
 
         .date {
             color: #bbb; /* Light Gray */
