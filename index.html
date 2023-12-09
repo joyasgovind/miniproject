@@ -87,22 +87,21 @@
             flex-direction: column;
         }
 
-	    /* Additional CSS for larger screens */
-@media screen and (min-width: 600px) {
+	    /* Adjust the layout for screens larger than 600px and smaller than 900px */
+@media screen and (min-width: 600px) and (max-width: 899px) {
     .app-card {
-        /* Adjust the width for larger screens, e.g., two cards per row */
+        /* Display two cards per row on larger screens */
         width: calc(50% - 20px);
     }
 }
 
-/* Additional CSS for even larger screens */
+/* Existing CSS for screens larger than 900px */
 @media screen and (min-width: 900px) {
     .app-card {
         /* Adjust the width for even larger screens, e.g., three cards per row */
         width: calc(33.33% - 20px);
     }
 }
-
         .app-card:hover {
             transform: scale(1.05);
         }
