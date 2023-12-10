@@ -26,27 +26,10 @@ def create_json_file(rows, header_values):
 
     json_content = json.dumps(data_list, ensure_ascii=False, indent=2)
 
-   with open('output/table_data.json', 'w', encoding='utf-8') as json_file:
-    json_file.write(json_content)
-       
+    with open('table_data.json', 'w', encoding='utf-8') as json_file:
+        json_file.write(json_content)
+
     print("Successfully created table_data.json with modified app names.")
-
-def create_html_file(rows, header_values):
-    html_content = '<table border="1">\n'
-    html_content += '<tr>' + ''.join(f'<th>{header}</th>' for header in header_values) + '</tr>\n'
-
-    for row in rows[1:]:
-        cell_values = [td.get_text(strip=True) for td in row.find_all(['td', 'th'])]
-        cell_values[0] = cell_values[0].replace(' ', '')
-
-        html_content += '<tr>' + ''.join(f'<td>{cell}</td>' for cell in cell_values) + '</tr>\n'
-
-    html_content += '</table>'
-
-   with open('output/table_data.json', 'w', encoding='utf-8') as json_file:
-    json_file.write(json_content)
-
-    print("Successfully created table_data.html.")
 
 if __name__ == "__main__":
     # URL of the README file
@@ -78,9 +61,6 @@ if __name__ == "__main__":
 
                 # Create JSON file
                 create_json_file(rows, header_values)
-
-                # Create HTML file
-                create_html_file(rows, header_values)
 
             else:
                 print("Table not found after the specified text in the README file.")
