@@ -1,3 +1,4 @@
+import os
 import requests
 from bs4 import BeautifulSoup
 import json
@@ -61,6 +62,15 @@ if __name__ == "__main__":
 
                 # Create JSON file
                 create_json_file(rows, header_values)
+
+                # Add, commit, and push changes using the GitHub token
+                github_token = os.getenv("GITHUB_TOKEN")
+                if github_token:
+                    os.system(f'git config --local user.email "actions@github.com"')
+                    os.system(f'git config --local user.name "GitHub Actions"')
+                    os.system('git add .')
+                    os.system('git commit -m "Update table_data.json [skip ci]"')
+                    os.system(f'git push -u origin HEAD')
 
             else:
                 print("Table not found after the specified text in the README file.")
