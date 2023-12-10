@@ -109,14 +109,23 @@
 }
 
         h2 {
-            font-size: 1.4em;
+            font-size: 1.6em;
             margin-bottom: 10px;
-            color: #fff; /* Light Text */
+            color: #fff;; /* Light Text */
+			text-align: center;
+			font-weight: bold;
         }
 
         p {
             margin-bottom: 10px;
-            color: #ccc; /* Lighter Gray Text */
+            color: #fff; /* Lighter Gray Text */
+        }
+		
+		c {
+            margin-bottom: 10px;
+            color: #fff; /* Lighter Gray Text */
+			font-family: 'Open Sans', sans-serif;
+			font-size: 17px;
         }
 
 .download-link {
@@ -164,12 +173,28 @@
             background-color: #333; /* Dark Modal Background */
             color: #fff; /* Light Text */
             padding: 20px;
-            border-radius: 12px;
+            border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             max-width: 80%;
             text-align: left;
             position: relative;
+			animation: animateModal 0.5s ease-in-out;
         }
+		
+		@keyframes animateModal {
+  from { opacity: 0; transform: scale(0.5); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+.modal.closing .modal-content {
+  animation: animateModalOut 0.5s ease-in-out;
+}
+
+@keyframes animateModalOut {
+  from { opacity: 1; transform: scale(1); }
+  to { opacity: 0; transform: scale(0.5); }
+}
+		
 
         .ok-btn {
             display: block;
@@ -207,7 +232,7 @@
   font-size: 13px;
   font-weight: bold;
   transition: all 0.3s ease-in-out;
-  width: 80px;
+  width: 90px;
   text-align: center; /* Center text within the button */
 }
 
@@ -294,11 +319,11 @@
     <div id="detailsModal" class="modal" style="display: none;">
         <div class="modal-content">
             <h2 id="modalTitle"></h2>
-            <p id="modalDescription"></p>
+            <c id="modalDescription"></c>
             <p id="modalVersion"></p>
             <p id="modalSourceMaintainer"></p>
             <p id="modalLastUpdated"></p>
-            <p id="modalStatus"></p>
+            <c id="modalStatus"></c>
             <button class="ok-btn" onclick="closeDetailsModal()">OK</button>
         </div>
     </div>
@@ -363,7 +388,7 @@
         const appSize = document.createElement('p');
         const sizeInMB = (app.size / (1024 * 1024)).toFixed(2);
         appSize.textContent = `Size: ${sizeInMB} MB`;
-
+		
         const downloadLink = document.createElement('a');
         downloadLink.href = app.downloadURL;
         downloadLink.textContent = 'Download';
@@ -380,7 +405,7 @@
         appCard.appendChild(appVersion);
         appCard.appendChild(appVersionDate);
         appCard.appendChild(appSize);
-        appCard.appendChild(downloadLink);
+		appCard.appendChild(downloadLink);
         appCard.appendChild(showDetailsBtn);
 
         return appCard;
@@ -446,7 +471,6 @@
                     // Populate modal content
                     document.getElementById('modalTitle').textContent = appDetails['App Name'];
                     document.getElementById('modalDescription').textContent = `Description: ${appDetails.Description}`;
-                    document.getElementById('modalVersion').textContent = `Version: ${appDetails.Version}`;
                     document.getElementById('modalStatus').textContent = `Status: ${appDetails.Status}`;
 
                     // Display modal
@@ -460,9 +484,13 @@
     }
 
     function closeDetailsModal() {
-        const modal = document.getElementById('detailsModal');
-        modal.style.display = 'none';
-    }
+  const modal = document.getElementById('detailsModal');
+  modal.classList.add('closing');
+  setTimeout(() => {
+    modal.style.display = 'none';
+    modal.classList.remove('closing'); // Remove the class after animation completes
+  }, 440); // Delay hiding the modal after animation completes
+}
 
     function updatePageInfo() {
         const pageInfo = document.getElementById('page-info');
@@ -497,12 +525,12 @@ function scrollToTop() {
 
 // Function to open the Releases page in a new tab
         function openReleasesPage() {
-            window.open('releasetest.html', '_blank');
+            window.open('contents/releasetest.html', '_blank');
         }
 
         // Function to open the Status Guide page in a new tab
         function openStatusGuide() {
-            window.open('statusguide.html', '_blank');
+            window.open('contents/statusguide.html', '_blank');
         }
 </script>
 
