@@ -1,4 +1,4 @@
-name: Run Script
+name: Run Table Script
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  run_script:
+  run_table_script:
     runs-on: ubuntu-latest
 
     steps:
@@ -23,6 +23,6 @@ jobs:
           pip install -r requirements.txt
         working-directory: ${{ github.workspace }}
 
-      - name: Run Script
+      - name: Run Table Script
         run: python table.py
         working-directory: ${{ github.workspace }}
