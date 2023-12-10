@@ -26,9 +26,9 @@ def create_json_file(rows, header_values):
 
     json_content = json.dumps(data_list, ensure_ascii=False, indent=2)
 
-    with open('table_data.json', 'w', encoding='utf-8') as json_file:
-        json_file.write(json_content)
-
+   with open('output/table_data.json', 'w', encoding='utf-8') as json_file:
+    json_file.write(json_content)
+       
     print("Successfully created table_data.json with modified app names.")
 
 def create_html_file(rows, header_values):
@@ -43,8 +43,8 @@ def create_html_file(rows, header_values):
 
     html_content += '</table>'
 
-    with open('table_data.html', 'w', encoding='utf-8') as html_file:
-        html_file.write(html_content)
+   with open('output/table_data.json', 'w', encoding='utf-8') as json_file:
+    json_file.write(json_content)
 
     print("Successfully created table_data.html.")
 
