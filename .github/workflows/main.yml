@@ -21,8 +21,8 @@ jobs:
       - name: Install Dependencies
         run: |
           pip install -r requirements.txt
-        working-directory: requirements.txt
+        working-directory: ${{ github.workspace }}
 
       - name: Run Script
-        run: python script_name.py
-        working-directory: table.py
+        run: python table.py
+        working-directory: ${{ github.workspace }}
