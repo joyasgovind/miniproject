@@ -175,7 +175,7 @@
             padding: 20px;
             border-radius: 5px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            max-width: 80%;
+            max-width: 30%;
             text-align: left;
             position: relative;
 			animation: animateModal 0.5s ease-in-out;
@@ -277,14 +277,13 @@
         }
 
         #pagination-container button {
-            background-color: #007aff; /* iOS Blue Pagination Button */
+            background-color: #000000; /* iOS Blue Pagination Button */
             color: #fff;
             border: none;
             padding: 12px;
             margin: 0 5px;
             cursor: pointer;
-            border-radius: 5px;
-            font-size: 14px;
+            font-size: 15px;
             transition: background-color 0.3s;
         }
 
@@ -329,9 +328,9 @@
     </div>
 
     <div id="pagination-container">
-        <button onclick="prevPage()">Prev</button>
+        <button onclick="prevPage()">‹</button>
         <span id="page-info">Page 1</span>
-        <button onclick="nextPage()">Next</button>
+        <button onclick="nextPage()">›</button>
     </div>
 </body>
 
@@ -512,7 +511,7 @@ function prevPage() {
     if (currentPage > 1) {
         currentPage--;
         displayApps(originalApps);
-        scrollToTop();
+        
     }
 }
 
