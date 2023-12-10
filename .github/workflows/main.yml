@@ -31,3 +31,9 @@ jobs:
       - name: Run Table Script
         run: python table.py
         working-directory: ${{ github.workspace }}
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+        name: table-data
+        path: table_data.json  
