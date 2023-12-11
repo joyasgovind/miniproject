@@ -170,9 +170,9 @@
   {
     "App Name": "BeRealBea",
     "Description": "BeReal, injected with the tweak Bea. Same as Unblur with more features,full tweak description here",
-    "Version": "1.3.3-1.18.1",
-    "Source/Maintainer": "yandevelop/zxcvbn's tweaked IPAs",
-    "Last Updated": "12-05-2023",
+    "Version": "1.3.3-1.19.0",
+    "Source/Maintainer": "yandevelop/zxcvbn's tweaked IPAs/Ed0.ipa",
+    "Last Updated": "12-10-2023",
     "Status": "✅ 👍"
   },
   {
@@ -626,9 +626,9 @@
   {
     "App Name": "InstaRocketPlus",
     "Description": "Instagram, injected with RocketandPlus for Instagram cracked. If you use the friendship status checker, enable the one from Rocket settings. The one by Plus for Instagram is broken and will cause app crashes in newer versions of Instagram. To activate Rocket, followthese steps",
-    "Version": "301.1-3.8.13-2.5.0",
+    "Version": "310.0.4-3.8.18-2.5.0",
     "Source/Maintainer": "CyPwn IPA Library/DPixel/DarkWebUser/Manpreet Singh @thisismanpreets",
-    "Last Updated": "09-21-2023",
+    "Last Updated": "12-10-2023",
     "Status": "✅"
   },
   {
@@ -725,7 +725,7 @@
     "Version": "3.85.3",
     "Source/Maintainer": "AppDB",
     "Last Updated": "02-09-2023",
-    "Status": "❔"
+    "Status": "⚠️"
   },
   {
     "App Name": "LocationSimulation(LocSim)",
@@ -781,6 +781,14 @@
     "Version": "2023.12.6",
     "Source/Maintainer": "AppDB/Strejda603/Jimbos iPA Library/DPixel",
     "Last Updated": "12-08-2023",
+    "Status": "✅"
+  },
+  {
+    "App Name": "Misaka",
+    "Description": "iOS customisation tool for KFD & MDC. This application aims to provide iPhone users with the opportunity to personalize their phones without the need for a jailbreak. Presently, it offers more than 24 default repositories and an impressive selection of over 400 tweaks.Note: Ensure you review the compatible iOS versions before download.",
+    "Version": "3.3.3",
+    "Source/Maintainer": "Misaka",
+    "Last Updated": "12-10-2023",
     "Status": "✅"
   },
   {
@@ -841,10 +849,10 @@
   },
   {
     "App Name": "Noir",
-    "Description": "Probably the best Safari extension for iOS that effortlessly introduces a dark mode to all websites, enhancing nighttime web browsing.Confirmed working with Sideloadly",
-    "Version": "2023.2.5",
+    "Description": "Probably the best Safari extension for iOS that effortlessly introduces a dark mode to all websites, enhancing nighttime web browsing.Confirmed to be functional with Sideloadly and Certs Users (assuming the certificate has the correct entitlement).",
+    "Version": "2023.2.6",
     "Source/Maintainer": "Noir",
-    "Last Updated": "11-10-2023",
+    "Last Updated": "12-10-2023",
     "Status": "✅ 👍 🚫"
   },
   {
@@ -1241,10 +1249,18 @@
   },
   {
     "App Name": "TrollApps",
-    "Description": "App description here",
+    "Description": "Removed: Constantly crashes when adding the repo.",
     "Version": "1.2",
     "Source/Maintainer": "haxi0",
     "Last Updated": "11-21-2022",
+    "Status": "❌"
+  },
+  {
+    "App Name": "TrollApps2",
+    "Description": "This new TrollApps serves as a substitute to the iOS App Store for individuals using TrollStore, providing an updated version of its predecessor (above). It enables users to directly download and install applications from various repositories into TrollStore. Require iOS 14.0> and latest version of TrollStore.Note: Some apps may remain (with this repo) marked as \\\"update\\\" even though they are running the latest version + displayed separately for each version.",
+    "Version": "2.1",
+    "Source/Maintainer": "TrollApps",
+    "Last Updated": "12-10-2023",
     "Status": "✅"
   },
   {
@@ -1394,9 +1410,9 @@
   {
     "App Name": "Violet",
     "Description": "Anotherstrictly 18+ NSFW manga reader. App is a bit buggy - let it download the database, then close and reopen if it freezes. You will have to reopen the app after going into some sub-menus bc there's no way out of them (UI bugs). Supports iOS 14+",
-    "Version": "1.29.1",
+    "Version": "1.29.2",
     "Source/Maintainer": "project-violet",
-    "Last Updated": "12-05-2023",
+    "Last Updated": "12-10-2023",
     "Status": "✅"
   },
   {
