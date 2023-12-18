@@ -302,6 +302,8 @@
 
     <header>
         <h1>SwaggyP36000 IPA Library</h1>
+	<header onclick="goToIndex()">
+
     </header>
 
     <div class="header-buttons">
@@ -490,6 +492,12 @@ function createAppCard(app) {
     modal.classList.remove('closing'); // Remove the class after animation completes
   }, 440); // Delay hiding the modal after animation completes
 }
+
+	// JavaScript function to handle the click event and reload the page
+    function goToIndex() {
+        // Assuming "index.html" is your index page, you can change this accordingly
+        window.location.href = 'index.html';
+    }
 
     function updatePageInfo() {
         const pageInfo = document.getElementById('page-info');
