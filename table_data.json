@@ -88,11 +88,11 @@
     "Status": "⚠️"
   },
   {
-    "App Name": "ApolloICAI",
-    "Description": "Apollo v1.15.11 + Apollo-ImprovedCustomApi v1.0.5, resolves any issues with Imgur loading that may have been caused by other tweaks.Note: I added this app upon request but I'm not familiar with its usage at all so if you come across any issues with the app, I won't be able to provide assistance.",
-    "Version": "1.15.11-1.0.5",
+    "App Name": "ApolloICA",
+    "Description": "Apollo v1.15.11 + Apollo-ImprovedCustomApi, resolves any issues with Imgur loading that may have been caused by other tweaks.Note: I added this app upon request but I'm not familiar with its usage at all so if you come across any issues with the app, I won't be able to provide assistance.",
+    "Version": "1.15.11-1.0.8",
     "Source/Maintainer": "zxcvbn's tweaked IPAs/JeffreyCA",
-    "Last Updated": "12-03-2023",
+    "Last Updated": "12-18-2023",
     "Status": "✅ ❔"
   },
   {
@@ -120,12 +120,20 @@
     "Status": "✅"
   },
   {
+    "App Name": "appdb",
+    "Description": "Comprehensive iOS client forAppDB, compatible with iOS 10 and up.",
+    "Version": "1.1.6",
+    "Source/Maintainer": "n3d1117",
+    "Last Updated": "12-12-2023",
+    "Status": "✅"
+  },
+  {
     "App Name": "AppDump2",
-    "Description": "Exclusively compatible with Trollstore 2. Through testing, it has demonstrated its ability tosuccessfully decrypt IPA files sourced from the App Store. (Note that to initiate the decryption process, it is imperative to open the desired app at least once. Additionally, Filza might be needed to locate the decrypted file.)",
+    "Description": "Decrypt IPA files.Note: that to initiate the decryption process, it is imperative to open the desired app at least once. Additionally, Filza might be needed to locate the decrypted file.",
     "Version": "1.2",
     "Source/Maintainer": "CyPwn IPA Library",
     "Last Updated": "11-30-2023",
-    "Status": "✅ 👍"
+    "Status": "✅"
   },
   {
     "App Name": "AppIndex",
@@ -170,9 +178,9 @@
   {
     "App Name": "BeRealBea",
     "Description": "BeReal, injected with the tweak Bea. Same as Unblur with more features,full tweak description here",
-    "Version": "1.3.3-1.19.0",
+    "Version": "1.3.3-1.19.1",
     "Source/Maintainer": "yandevelop/zxcvbn's tweaked IPAs/Ed0.ipa",
-    "Last Updated": "12-10-2023",
+    "Last Updated": "12-14-2023",
     "Status": "✅ 👍"
   },
   {
@@ -186,9 +194,9 @@
   {
     "App Name": "BHX",
     "Description": "Twitter, with added features such as custom fonts, video saving, no ads, tabs customization, and more!",
-    "Version": "10.19-4.1",
+    "Version": "10.20-4.2",
     "Source/Maintainer": "BandarHL/AppDB/Manpreet Singh @thisismanpreeets/DPixel/CydiaAbdullah/zxcvbn's tweaked IPAs/TrollStore AppsUpdates",
-    "Last Updated": "12-09-2023",
+    "Last Updated": "12-16-2023",
     "Status": "✅ 👍"
   },
   {
@@ -201,10 +209,10 @@
   },
   {
     "App Name": "BHTikTokPlus",
-    "Description": "This is possibly the finest TikTok enhancement currently available before BHTikTokLRD : Featuring a completely revamped user interface, enhanced stability, works if sideloaded, etc. For additional information, visit dayanch96's GitHub repository.",
-    "Version": "dayanch96 : 2.3-32.4.0 / BandarHL : 0.0.1-30.8.0",
+    "Description": "This is possibly the finest TikTok enhancement currently available before BHTikTokLRD : Featuring a completely revamped user interface, enhanced stability, works if sideloaded, etc. For additional information, visit dayanch96's GitHub repository.Note: Fixed for non-TrollStore users.",
+    "Version": "dayanch96 : 2.3-32.5.0 / BandarHL : 0.0.1-30.8.0",
     "Source/Maintainer": "BandarHL/dayanch96/zxcvbn's tweaked IPAs/mbs0ft",
-    "Last Updated": "dayanch96 : 12-05-2023 / BandarHL : 08-19-2023",
+    "Last Updated": "dayanch96 : 12-18-2023 / BandarHL : 08-19-2023",
     "Status": "✅ 👍"
   },
   {
@@ -225,10 +233,26 @@
   },
   {
     "App Name": "Bundlr",
-    "Description": "App to quickly search up and copy bundleID's from App Store apps",
+    "Description": "App to quickly search up and copy bundleID's from App Store apps.",
     "Version": "1.0",
     "Source/Maintainer": "CyPwn IPA Library",
     "Last Updated": "11-22-2022",
+    "Status": "✅"
+  },
+  {
+    "App Name": "CallAssist",
+    "Description": "(Not translated) Chinese alternative to NiceCaller, aimed at optimizing and expanding the capabilities of the system's phone app.Note: I only uploaded the viOS14-15. viOS16here/ viOS17here.",
+    "Version": "36 (14-15)",
+    "Source/Maintainer": "xybp888",
+    "Last Updated": "12-15-2023",
+    "Status": "✅"
+  },
+  {
+    "App Name": "Cardio",
+    "Description": "An application that utilizes the CoreTrust bug to modify Apple Pay images.",
+    "Version": "1.1",
+    "Source/Maintainer": "cisc0disco",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
@@ -269,6 +293,14 @@
     "Version": "1.0",
     "Source/Maintainer": "CyPwn IPA Library",
     "Last Updated": "10-17-2022",
+    "Status": "✅"
+  },
+  {
+    "App Name": "CocoaTop",
+    "Description": "Interface for viewing processes on iOS",
+    "Version": "1.0",
+    "Source/Maintainer": "D0m0/imbazim",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
@@ -337,10 +369,10 @@
   },
   {
     "App Name": "DLTikTok",
-    "Description": "Licensing only works properly when installed via TrollStore. Otherwise you will see an \\\"unlicensed version\\\" error in DLTikTok's settings.TikTok, enhanced with features including no-watermark video saving, clear UI mode, no ads, etc.",
-    "Version": "32.1.0",
+    "Description": "Requires a license. TikTok, enhanced with features including no-watermark video saving, clear UI mode, no ads, etc.",
+    "Version": "32.5.0",
     "Source/Maintainer": "AppDB/CydiaAbdullah/KZStore* /nowesr1",
-    "Last Updated": "11-18-2023",
+    "Last Updated": "12-13-2023",
     "Status": "✅"
   },
   {
@@ -382,14 +414,6 @@
     "Source/Maintainer": "DPixel",
     "Last Updated": "01-31-2023",
     "Status": "⚠️"
-  },
-  {
-    "App Name": "Duolingo",
-    "Description": "Injected with premium.Full app descriptionhere. Note from iOSGods:\\\"You must use Sideloadly to sign it and use the same iCloud account that you using on device to sign for this to work.\\\"",
-    "Version": "7.2.0",
-    "Source/Maintainer": "iOSGods!",
-    "Last Updated": "12-07-2023",
-    "Status": "✅ 👍 🚫"
   },
   {
     "App Name": "Egg3DS",
@@ -450,9 +474,9 @@
   {
     "App Name": "FacebookWolf",
     "Description": "Facebook, injected with Wolf for Facebook by Michael Lema",
-    "Version": "443.0.2",
+    "Version": "444.0",
     "Source/Maintainer": "CyPwn IPA Library/Manpreet Singh @thisismanpreets/FayezUpdates/DPixel/CydiaAbdullah/iApps/Clement ",
-    "Last Updated": "12-06-2023",
+    "Last Updated": "12-14-2023",
     "Status": "✅ 👍"
   },
   {
@@ -528,6 +552,14 @@
     "Status": "✅"
   },
   {
+    "App Name": "Grammarly",
+    "Description": "Begin by installing it from the App Store and follow all the instructions provided on-screen. Once you've completed this, proceed to force install the TrollStore version.Note: Premium keyboard features are locked.",
+    "Version": "4.0",
+    "Source/Maintainer": "Haidar_Phantom",
+    "Last Updated": "12-15-2023",
+    "Status": "✅"
+  },
+  {
     "App Name": "HarpyReloaded",
     "Description": "Note: There are people that report this working, and people that report it broken. It's hit-and-miss at best.App that lets you block internet to other devices on the same network as yours",
     "Version": "1.0.1",
@@ -560,6 +592,14 @@
     "Status": "⚠️"
   },
   {
+    "App Name": "Ignited",
+    "Description": "Forked from Delta, this is a multi-core emulator front-end for iOS devices. It offers an attractive user interface and a suite of features not typically found in other emulators.",
+    "Version": "1.7.1",
+    "Source/Maintainer": "LitRitt",
+    "Last Updated": "12-12-2023",
+    "Status": "✅"
+  },
+  {
     "App Name": "ImageSearch",
     "Description": "Reverse Image Search App, cracked for pro features. Click Pro at the top right, then the purchase button",
     "Version": "7.1",
@@ -578,9 +618,9 @@
   {
     "App Name": "InShotPro",
     "Description": "Popular video/image editor with pro features unlocked",
-    "Version": "1.73.1",
+    "Version": "1.74.0",
     "Source/Maintainer": "AppDB/DPixel/iApps/FayezUpdates/Manpreet Singh @thisismanpreets/zxcvbn’s tweaked IPAs",
-    "Last Updated": "11-02-2023",
+    "Last Updated": "12-11-2023",
     "Status": "✅"
   },
   {
@@ -601,26 +641,26 @@
   },
   {
     "App Name": "InstagramLRD",
-    "Description": "This is pretty much TrollStore-only, unless other sideloading software allows you to override current installs without uninstalling as well. If you're on TrollStore, first install and sign into Instagram from the App Store, then force overwrite it with this IPA. If you can't use TrollStore, sign into literally any other sideloaded Instagram IPA with the same bundleID (the default one), and then install this one. I can't guarantee that this will work if you're sideloading, but it's worth a shot. Otherwise, the app will crash on the login screen.If you've used TikTokLRD, imagine that but for Instagram. Features include media saving/sharing/previewing (stories included), show follow status, disable typing status, view DMs anonymously, disable ads, FaceID for account switching, etc.",
-    "Version": "310.0.4",
+    "Description": "Not cracked. If you've used TikTokLRD, imagine that but for Instagram. Features include media saving/sharing/previewing (stories included), show follow status, disable typing status, view DMs anonymously, disable ads, FaceID for account switching, etc.",
+    "Version": "311.0.2",
     "Source/Maintainer": "IPA Fire/nowesr1",
-    "Last Updated": "12-06-2023",
+    "Last Updated": "12-13-2023",
     "Status": "✅"
   },
   {
     "App Name": "InstagramNyx",
     "Description": "Not cracked. 40+ advanced features (premium), adaptive activity status, personalized interface, image and video downloads, custom albums, and feed customizations. Access the Nyx menu easily by shaking your device or pressing and holding the Home Button. Nyx prioritizes user-friendliness and privacy, ensuring no storage or sale of personal data to third parties.Even if you choose not to make a purchase, you can still access several free features that do not necessitate creating an account.",
-    "Version": "310.0.4-1.1.4",
+    "Version": "311.0.2-1.1.6",
     "Source/Maintainer": "Ed0.ipa (IPA NOT CRACKED)/Sezo",
-    "Last Updated": "12-04-2023",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
     "App Name": "InstaRocketCracked",
     "Description": "Instagram, injected with Rocket Cracked (no ad banner, all features functional). To activate Rocket, followthese steps",
-    "Version": "310.0.4-3.8.17",
+    "Version": "311.0.2-3.8.18",
     "Source/Maintainer": "AppDB/DarkWebUser/DPixel/Manpreet Singh @thisismanpreets/nowesr1/Ed0.ipa (IPA NOT CRACKED)/zxcvbn's tweaked IPAs",
-    "Last Updated": "12-05-2023",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
@@ -642,9 +682,9 @@
   {
     "App Name": "InstaRocketBH",
     "Description": "Instagram, injected with Rocket Cracked (no ad banner, all features functional) and BH(new).List of BH's features. To activate Rocket, followthese steps",
-    "Version": "310.0.4-3.8.18",
+    "Version": "311.0.2-3.8.18",
     "Source/Maintainer": "zxcvbn's tweaked IPAs/BandarHL",
-    "Last Updated": "12-10-2023",
+    "Last Updated": "12-12-2023",
     "Status": "✅ 👍"
   },
   {
@@ -658,9 +698,9 @@
   {
     "App Name": "iPoGo",
     "Description": "Pokemon GO with a bunch of cheats, including joystick-to-walk, increased catch accuracy, sniping, teleporting, etc. USE RESPONSIBLY, OVERUSE CAN GET YOU BANNED",
-    "Version": "3.2.0",
+    "Version": "3.2.1",
     "Source/Maintainer": "https://ipogo.app",
-    "Last Updated": "11-28-2023",
+    "Last Updated": "12-15-2023",
     "Status": "✅"
   },
   {
@@ -678,6 +718,14 @@
     "Source/Maintainer": "XITRIX",
     "Last Updated": "11-12-2023",
     "Status": "✅ 👍"
+  },
+  {
+    "App Name": "Jitterbug",
+    "Description": "Application that enables wireless connection to another iOS device (none of which are jailbroken) and launch an app on the connected device with JIT enabled. Can also establish a VPN tunnel using TrollStore to run apps on the local device without needing a second device.",
+    "Version": "1.3.1",
+    "Source/Maintainer": "osy",
+    "Last Updated": "12-12-2023",
+    "Status": "❔"
   },
   {
     "App Name": "KakaManga",
@@ -754,9 +802,9 @@
   {
     "App Name": "Mangayomi",
     "Description": "From the GitHub: Mangayomi is free an open source manga reader and anime streaming cross-plateform app inspired by Tachiyomi made with Flutter. It allows users to read manga and watch anime from a variety of sources.",
-    "Version": "0.1.35",
+    "Version": "0.1.4",
     "Source/Maintainer": "kodjodevf",
-    "Last Updated": "12-08-2023",
+    "Last Updated": "12-15-2023",
     "Status": "✅"
   },
   {
@@ -769,10 +817,10 @@
   },
   {
     "App Name": "Meitu++",
-    "Description": "Meitu, a photo & AI Art generator, cracked for premium features.Note: VIP features function properly (logged in or not) even if it indicates that you are not a VIP.",
-    "Version": "9.10.30",
-    "Source/Maintainer": "ipalibrary.me/iApps",
-    "Last Updated": "12-08-2023",
+    "Description": "Meitu, a photo & AI Art generator, cracked for premium features.Note: You must log in first and even if it indicates you're not VIP, features are still working. (VIP+ remains inaccessible)",
+    "Version": "9.10.35",
+    "Source/Maintainer": "desfazara/iOS Tutorials + App Cracks",
+    "Last Updated": "12-16-2023",
     "Status": "✅ 👍"
   },
   {
@@ -786,9 +834,9 @@
   {
     "App Name": "Misaka",
     "Description": "iOS customisation tool for KFD & MDC. This application aims to provide iPhone users with the opportunity to personalize their phones without the need for a jailbreak. Presently, it offers more than 24 default repositories and an impressive selection of over 400 tweaks.Note: Ensure you review the compatible iOS versions before download.",
-    "Version": "3.3.3",
+    "Version": "3.3.7",
     "Source/Maintainer": "Misaka",
-    "Last Updated": "12-10-2023",
+    "Last Updated": "12-18-2023",
     "Status": "✅"
   },
   {
@@ -848,12 +896,12 @@
     "Status": "✅ 👍"
   },
   {
-    "App Name": "Noir",
-    "Description": "Probably the best Safari extension for iOS that effortlessly introduces a dark mode to all websites, enhancing nighttime web browsing.Confirmed to be functional with Sideloadly and Certs Users (assuming the certificate has the correct entitlement).",
-    "Version": "2023.2.6",
-    "Source/Maintainer": "Noir",
-    "Last Updated": "12-10-2023",
-    "Status": "✅ 👍 🚫"
+    "App Name": "Notability",
+    "Description": "Cracked with Satella. Digital note-taking app which is a highly appealing alternative to Goodnotes 6",
+    "Version": "14.5",
+    "Source/Maintainer": "zxcvbn's tweaked IPAs",
+    "Last Updated": "12-12-2023",
+    "Status": "✅"
   },
   {
     "App Name": "ObjectRemoval",
@@ -922,17 +970,17 @@
   {
     "App Name": "PhotoshopExpress",
     "Description": "Adobe's Photoshop Express, cracked for all premium featuresexcept cloud storage",
-    "Version": "23.48.0",
+    "Version": "23.49.1",
     "Source/Maintainer": "AppDB/FayezUpdates/iPAWiND/ipalibrary.me",
-    "Last Updated": "12-05-2023",
+    "Last Updated": "12-14-2023",
     "Status": "✅"
   },
   {
     "App Name": "PicsArt++",
     "Description": "PicsArt with premium features enbled",
-    "Version": "23.7.3",
+    "Version": "23.8.1",
     "Source/Maintainer": "zxcvbn’s tweaked IPAs/AppDB/CyPwn IPA Library/DPixel/FayezUpdates/تطبيقات IPA 🌙/Manpreet Singh @thisismanpreets/Qamislo - Apps/Turki/IPA Fire/HertzSign iPA Library",
-    "Last Updated": "11-28-2023",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
@@ -976,11 +1024,19 @@
     "Status": "✅"
   },
   {
+    "App Name": "QuantumultX",
+    "Description": "Note: Filters cannot be used without the receipt linked to the corresponding App ID used for the purchase; there's no way to bypass this requirement.",
+    "Version": "1.4.2",
+    "Source/Maintainer": "iOS Tutorials + App Cracks",
+    "Last Updated": "12-12-2023",
+    "Status": "✅"
+  },
+  {
     "App Name": "QuizletPlus",
     "Description": "App description here.Quizlet Plus injected. Tweak originally available through iApps paid repository but now provided for free thanks to AIpaLux.Note: please be aware that occasional random crashes can occur while using the app.",
-    "Version": "8.15",
+    "Version": "8.16",
     "Source/Maintainer": "AIpalux/IPA Fire",
-    "Last Updated": "12-08-2023",
+    "Last Updated": "12-15-2023",
     "Status": "✅"
   },
   {
@@ -1026,9 +1082,9 @@
   {
     "App Name": "Rosiecord",
     "Description": "Update: I will continue to update the original Rosiecord (Cabin Font + Plumpy + Flowercord) on this library. If you want one of the other customizations, you can get it from the dev's GitHub.Enmity for Discord, but with custom icons. More up-to-date version of Plumpycord with more features",
-    "Version": "208.0",
+    "Version": "209.0",
     "Source/Maintainer": "acquitelol",
-    "Last Updated": "12-03-2023",
+    "Last Updated": "12-13-2023",
     "Status": "✅"
   },
   {
@@ -1037,6 +1093,14 @@
     "Version": "1.0",
     "Source/Maintainer": "CyPwn IPA Library",
     "Last Updated": "11-14-2022",
+    "Status": "✅"
+  },
+  {
+    "App Name": "SCMusicPlus",
+    "Description": "Improve your SoundCloud experience by eliminating advertisements, getting rid of promoted playlists, and removing upsell buttons.Installation: Download the standard SoundCloud app from the app store and sign in, then delete the app while still logged in, and use this IPA. Once installed, you can start enjoying it as you should already be logged in.",
+    "Version": "6.22.0-2.2.1",
+    "Source/Maintainer": "Rov3r",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
@@ -1073,7 +1137,7 @@
   },
   {
     "App Name": "SnapchatFalcon",
-    "Description": "Before signing Falcon, make sure to remove Mobileprovision.Unfortunately, Falcon allows the use of SnapChat with Mobileprovision, so it's crucial to remove it. Confirmed to work with TrollStore and ESign,do not use Sideloadly. Please be aware that using Falcon isat your own risk. This modded version of Snapchat offers additional features like media downloads, ad removal, and anonymous story viewing. You can find the full feature listhere.",
+    "Description": "Confirmed to work with TrollStore and ESign,do not use Sideloadly. Please be aware that using Falcon isat your own risk. This modded version of Snapchat offers additional features like media downloads, ad removal, and anonymous story viewing. You can find the full feature listhere.",
     "Version": "12.54",
     "Source/Maintainer": "iCrackIPA/zxcvbn's tweaked IPAs/AppDB",
     "Last Updated": "10-03-2023",
@@ -1082,18 +1146,18 @@
   {
     "App Name": "Snapchatiota",
     "Description": "Snapchat iota is hailed as theultimateSnapchat tweak, surpassing all other variants possible. Note that this tweak is a premium offering, and it neither currently nor in the future will I provide a cracked version. To support the dedicated developer, Kanji, in his continuous efforts to provide timely and valuable updates, please consider joining his official Discord and purchasing the tweak!Confirmed working with ESign, GBox and TrollStore.In-depth tutorialHERE.",
-    "Version": "12.63-4.5",
+    "Version": "12.64-4.5",
     "Source/Maintainer": "Kanji's discord",
-    "Last Updated": "12-05-2023",
+    "Last Updated": "12-12-2023",
     "Status": "✅ 👍 💡"
   },
   {
     "App Name": "SnapchatWickedCracked",
-    "Description": "I strongly encourage you to review the linked tutorial, paying particular attention to the known issues and FAQs. This will help prevent unnecessary issue submissions from users.Confirmed working with ESign and GBox.Modded version of Snapchat offering a broader range of features compared to Falcon.In-depth tutorial.",
-    "Version": "12.63",
+    "Description": "I strongly encourage you to review the linked tutorial, paying particular attention to the known issues and FAQs. This will help prevent unnecessary issue submissions from users.Confirmed working with ESign/GBox and TrollStore.Modded version of Snapchat offering a broader range of features compared to Falcon.In-depth tutorial.",
+    "Version": "12.65",
     "Source/Maintainer": "zxcvbn's tweaked IPAs/MeemNon/AppDB",
-    "Last Updated": "12-09-2023",
-    "Status": "✅ 💡 🚫"
+    "Last Updated": "12-16-2023",
+    "Status": "✅ 💡"
   },
   {
     "App Name": "Soor",
@@ -1122,9 +1186,9 @@
   {
     "App Name": "SpotifyDeluxe",
     "Description": "Spotify with many extra features injected, Spotilife being one of them",
-    "Version": "8.8.94",
+    "Version": "8.8.96",
     "Source/Maintainer": "AppDB/CyPwn IPA Library",
-    "Last Updated": "12-06-2023",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
@@ -1141,14 +1205,14 @@
     "Version": "8.6.42",
     "Source/Maintainer": "u/alnoise/zxcvbn's tweaked IPAs",
     "Last Updated": "12-02-2023",
-    "Status": "✅ 👍"
+    "Status": "⚠️"
   },
   {
     "App Name": "Spotilife",
     "Description": "This version has support for CarPlay when installed via TrollStore.Spotify v8.7.88 with Spotilife v1.8, no other tweaks. With Spotify Rewind around the corner, you'll want to be on the newest possible version to be able to see your Rewind statistics in your tweaked Spotify. Can confirm this works on iOS 14.x. If you're on 15.x or above and are having issues with this, there are a few other IPAs on this repo you can try",
-    "Version": "8.8.94",
+    "Version": "8.8.96",
     "Source/Maintainer": "Manpreet Singh @thisismanpreets/Spotilife IPAs/Spotify iOS",
-    "Last Updated": "12-10-2023",
+    "Last Updated": "12-14-2023",
     "Status": "✅ 👍"
   },
   {
@@ -1176,6 +1240,14 @@
     "Status": "✅"
   },
   {
+    "App Name": "Streamer",
+    "Description": "The Streamer app for iOS and tvOS allows you to stream movies and TV shows from various sources. It supports Chromecast for streaming to FireTV and Chromecast devices, offers multi-language subtitles, and a favorites feature for quick access.",
+    "Version": "1.2.32",
+    "Source/Maintainer": "StreamerApp",
+    "Last Updated": "12-17-2023",
+    "Status": "✅"
+  },
+  {
     "App Name": "Tailor",
     "Description": "Full app description here. App that stitches long screenshots together, cracked for premium features. Just click buy and everything automatically activates",
     "Version": "2.1.1",
@@ -1200,11 +1272,19 @@
     "Status": "✅"
   },
   {
+    "App Name": "TheChan",
+    "Description": "An iOS client for 4Chan.Note: Review itsFAQs.",
+    "Version": "1.8.2",
+    "Source/Maintainer": "TheChanDev",
+    "Last Updated": "12-12-2023",
+    "Status": "❔"
+  },
+  {
     "App Name": "TikTokDark",
     "Description": "Alternative to DLTikTok with similar features.If you don't see a settings option for Dark, click the empty space at the top right of the TikTok settings page. It's an invisible button",
-    "Version": "32.4.0",
+    "Version": "32.5.0",
     "Source/Maintainer": "Manpreet Singh @thisismanpreets/AppDB/DPixel/FayezUpdates/iApps/zxcvbn's tweaked IPAs/nowesr1",
-    "Last Updated": "12-06-2023",
+    "Last Updated": "12-13-2023",
     "Status": "✅"
   },
   {
@@ -1218,10 +1298,10 @@
   {
     "App Name": "TikTokLRD",
     "Description": "TikTok, injected with a version of TikTokLRD (3.0). In some cases, the option to save photos doesn't show up. Use theTikPhoto shortcutto save them if this happens to you. For those using LRD 2.1 with the menu in Russian, translationspart 1/part 2/part 3",
-    "Version": "32.4.0",
+    "Version": "32.5.0",
     "Source/Maintainer": "zxcvbn’s tweaked IPAs/Manpreet Singh @thisismanpreeets/nowesr1",
-    "Last Updated": "12-06-2023",
-    "Status": "✅ 🚫"
+    "Last Updated": "12-13-2023",
+    "Status": "✅"
   },
   {
     "App Name": "TikTokLRDCracked",
@@ -1257,7 +1337,7 @@
   },
   {
     "App Name": "TrollApps2",
-    "Description": "This new TrollApps serves as a substitute to the iOS App Store for individuals using TrollStore, providing an updated version of its predecessor (above). It enables users to directly download and install applications from various repositories into TrollStore. Require iOS 14.0> and latest version of TrollStore.Note: Some apps may remain (with this repo) marked as \\\"update\\\" even though they are running the latest version + displayed separately for each version.",
+    "Description": "This new TrollApps serves as a substitute to the iOS App Store for individuals using TrollStore, providing an updated version of its predecessor (above). It enables users to directly download and install applications from various repositories into TrollStore. Require iOS 14.0> and latest version of TrollStore.Note: Some apps may remain marked as \\\"update\\\" even though they are running the latest version.",
     "Version": "2.1",
     "Source/Maintainer": "TrollApps",
     "Last Updated": "12-10-2023",
@@ -1270,6 +1350,14 @@
     "Source/Maintainer": "c22dev",
     "Last Updated": "11-29-2023",
     "Status": "❌"
+  },
+  {
+    "App Name": "TrollDecrypt",
+    "Description": "Can decrypt any IPA swiftly without initially launching the app, and there's no need to navigate through Filza to locate the decrypted file due to an included history feature!",
+    "Version": "1.1",
+    "Source/Maintainer": "donato-fiore",
+    "Last Updated": "12-12-2023",
+    "Status": "✅ 👍"
   },
   {
     "App Name": "TrollLockReborn",
@@ -1309,6 +1397,14 @@
     "Version": "1.0",
     "Source/Maintainer": "CyPwn IPA Library",
     "Last Updated": "11-09-2022",
+    "Status": "✅"
+  },
+  {
+    "App Name": "TrollSpeed",
+    "Description": "Displays upload and download speeds beneath the status bar. Work on all iOS versions compatible with TrollStore.Note: on iOS 16 and above, \\\"Developer Mode\\\" needs to be activated.",
+    "Version": "1.8.6",
+    "Source/Maintainer": "Lessica",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
@@ -1354,9 +1450,9 @@
   {
     "App Name": "TwitchPlus",
     "Description": "Alternative to Twitch Toolbox. Twitch with no ads",
-    "Version": "17.4.1-0.1.0",
+    "Version": "17.5-0.1.0",
     "Source/Maintainer": "AppDB/DPixel/zxcvbn's tweaked IPAs/level3tjg",
-    "Last Updated": "12-05-2023",
+    "Last Updated": "12-12-2023",
     "Status": "✅ 👍"
   },
   {
@@ -1392,11 +1488,11 @@
     "Status": "✅"
   },
   {
-    "App Name": "uYouPlusExtra",
-    "Description": "This enhanced version of uYou+ not only incorporates its existing features but also integrates additional functionalities that were initially intended to be included in the original uYou+, but might have been declined during its initial development phase. Full featureshere.",
-    "Version": "18.48.3-3.0.1",
+    "App Name": "uYouEnhanced",
+    "Description": "Formerly known as uYouPlusExtra. This enhanced version of uYou+ not only incorporates its existing features but also integrates additional functionalities that were initially intended to be included in the original uYou+, but might have been declined during its initial development phase. Full featureshere.",
+    "Version": "18.49.3-3.0.1",
     "Source/Maintainer": "arichorn/zxcvbn's tweaked IPAs",
-    "Last Updated": "12-05-2023",
+    "Last Updated": "12-12-2023",
     "Status": "✅ 👍"
   },
   {
@@ -1441,10 +1537,10 @@
   },
   {
     "App Name": "Watusi3",
-    "Description": "WhatsApp, injected with Watusiv1.2.11, Stalkyv4.1.23, OnlineNotifyv3.4.4. Notifications and iCloud backups work with TrollStore",
-    "Version": "23.25.6-1.2.11-3.4.4",
-    "Source/Maintainer": "CyPwn IPA Library/DPixel/MeemNon/zxcvbn’s tweaked IPAs",
-    "Last Updated": "12-10-2023",
+    "Description": "WhatsApp, injected with Watusiv1.2.14, Stalkyv4.1.24, OnlineNotifyv3.4.4. Notifications and iCloud backups work with TrollStore",
+    "Version": "23.25.81-1.2.14-3.4.4",
+    "Source/Maintainer": "CyPwn IPA Library/DPixel/MeemNon/zxcvbn’s tweaked IPAs/FouadRaheb",
+    "Last Updated": "12-16-2023",
     "Status": "✅"
   },
   {
@@ -1453,6 +1549,14 @@
     "Version": "1.10.8",
     "Source/Maintainer": "zhouwei/ginsudev",
     "Last Updated": "03-27-2023",
+    "Status": "✅"
+  },
+  {
+    "App Name": "WiFiList",
+    "Description": "Enables you to view the previously saved passwords of connected Wi-Fi networks.",
+    "Version": "1.0",
+    "Source/Maintainer": "Mikasa-san",
+    "Last Updated": "12-12-2023",
     "Status": "✅"
   },
   {
@@ -1474,18 +1578,26 @@
   {
     "App Name": "YouTubeOLED",
     "Description": "Mainly maintained on AppDB, this youtube is injected with multiple tweaks which are YTADBlock, YouTubePlus, Return Youtube Dislike, YTClassicVideoQuality, YouPiP, iSponsorBlock, YTSystemAppearance, YTABConfig, YTShortsProgress (broken for me), YTUHD (not very stable as its already mentioned), YoutubeExtensions (if sideloaded)",
-    "Version": "18.48.3",
+    "Version": "18.49.3",
     "Source/Maintainer": "AppDB/Binnichtaktiv06",
-    "Last Updated": "12-05-2023",
+    "Last Updated": "12-11-2023",
     "Status": "✅"
   },
   {
     "App Name": "YouTubeReborn",
     "Description": "Youtube, injected with the popular YouTube Reborn tweak",
-    "Version": "18.20.3",
-    "Source/Maintainer": "AppDB/DPixel/FayezUpdates/CydiaAbdullah/ipalibrary.me",
-    "Last Updated": "05-24-2023",
-    "Status": "❌"
+    "Version": "18.49.3",
+    "Source/Maintainer": "AppDB/DPixel/FayezUpdates/CydiaAbdullah/ipalibrary.me/nowesr1",
+    "Last Updated": "12-13-2023",
+    "Status": "✅"
+  },
+  {
+    "App Name": "YTLitePlus",
+    "Description": "YTLitePlus is a streamlined version of YouTube, built on the YTLite base bydayanch96. It includes more than 15 enhancements, like ReturnYoutubeDislike and iSponsorBlock, and avoids excess tabs or overlays for a cleaner user experience.",
+    "Version": "18.48.3-2.4",
+    "Source/Maintainer": "Balackburn",
+    "Last Updated": "12-17-2023",
+    "Status": "✅"
   },
   {
     "App Name": "YTMusicUltimate",
