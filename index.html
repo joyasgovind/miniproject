@@ -363,53 +363,53 @@
         })
         .catch(error => console.error('Error fetching app data:', error));
 
-    function createAppCard(app) {
-        const appCard = document.createElement('div');
-        appCard.classList.add('app-card');
+function createAppCard(app) {
+    const appCard = document.createElement('div');
+    appCard.classList.add('app-card');
 
-        const img = document.createElement('img');
-        img.src = app.iconURL;
-        img.alt = app.name;
+    const img = document.createElement('img');
+    img.src = app.iconURL;
+    img.alt = app.name;
 
-        const appName = document.createElement('h2');
-        appName.textContent = app.name;
+    const appName = document.createElement('h2');
+    appName.textContent = app.name;
 
-        const appBundleId = document.createElement('p');
-        appBundleId.textContent = `Bundle ID: ${app.bundleIdentifier}`;
-        appBundleId.classList.add('bundle-id');
+    const appBundleId = document.createElement('p');
+    appBundleId.textContent = `Bundle ID: ${app.bundleIdentifier}`;
+    appBundleId.classList.add('bundle-id');
 
-        const appVersion = document.createElement('p');
-        appVersion.textContent = `Latest Version: ${app.version}`;
+    const latestVersion = app.versions[0]; // Get the latest version
+    const appVersion = document.createElement('p');
+    appVersion.textContent = `Latest Version: ${latestVersion.version}`;
 
-        const appVersionDate = document.createElement('p');
-        appVersionDate.textContent = `Updated: ${app.versionDate}`;
+    const appVersionDate = document.createElement('p');
+    appVersionDate.textContent = `Updated: ${latestVersion.date}`;
 
-        const appSize = document.createElement('p');
-        const sizeInMB = (app.size / (1024 * 1024)).toFixed(2);
-        appSize.textContent = `Size: ${sizeInMB} MB`;
-		
-        const downloadLink = document.createElement('a');
-        downloadLink.href = app.downloadURL;
-        downloadLink.textContent = 'Download';
-        downloadLink.classList.add('download-link');
+    const appSize = document.createElement('p');
+    const sizeInMB = (latestVersion.size / (1024 * 1024)).toFixed(2);
+    appSize.textContent = `Size: ${sizeInMB} MB`;
 
-        const showDetailsBtn = document.createElement('button');
-        showDetailsBtn.textContent = 'Details';
-        showDetailsBtn.classList.add('show-details-btn');
-        showDetailsBtn.onclick = () => showDetails(app.name.toLowerCase()); // Convert to lowercase for comparison
+    const downloadLink = document.createElement('a');
+    downloadLink.href = latestVersion.downloadURL;
+    downloadLink.textContent = 'Download';
+    downloadLink.classList.add('download-link');
 
-        appCard.appendChild(img);
-        appCard.appendChild(appName);
-        appCard.appendChild(appBundleId);
-        appCard.appendChild(appVersion);
-        appCard.appendChild(appVersionDate);
-        appCard.appendChild(appSize);
-		appCard.appendChild(downloadLink);
-        appCard.appendChild(showDetailsBtn);
+    const showDetailsBtn = document.createElement('button');
+    showDetailsBtn.textContent = 'Details';
+    showDetailsBtn.classList.add('show-details-btn');
+    showDetailsBtn.onclick = () => showDetails(app.name.toLowerCase()); // Convert to lowercase for comparison
 
-        return appCard;
-    }
+    appCard.appendChild(img);
+    appCard.appendChild(appName);
+    appCard.appendChild(appBundleId);
+    appCard.appendChild(appVersion);
+    appCard.appendChild(appVersionDate);
+    appCard.appendChild(appSize);
+    appCard.appendChild(downloadLink);
+    appCard.appendChild(showDetailsBtn);
 
+    return appCard;
+}
     function displayApps(apps) {
         const appContainer = document.getElementById('app-container');
         appContainer.innerHTML = '';
@@ -524,12 +524,12 @@ function scrollToTop() {
 
 // Function to open the Releases page in a new tab
         function openReleasesPage() {
-            window.open('releasetest.html', '_blank');
+            window.open('contents/releasetest.html', '_blank');
         }
 
         // Function to open the Status Guide page in a new tab
         function openStatusGuide() {
-            window.open('statusguide.html', '_blank');
+            window.open('contents/statusguide.html', '_blank');
         }
 </script>
 
