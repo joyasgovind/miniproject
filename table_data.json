@@ -178,9 +178,9 @@
   {
     "App Name": "BeRealBea",
     "Description": "BeReal, injected with the tweak Bea. Same as Unblur with more features,full tweak description here",
-    "Version": "1.3.3-1.19.1",
+    "Version": "1.3.3-1.20.0",
     "Source/Maintainer": "yandevelop/zxcvbn's tweaked IPAs/Ed0.ipa",
-    "Last Updated": "12-14-2023",
+    "Last Updated": "12-19-2023",
     "Status": "✅ 👍"
   },
   {
@@ -194,9 +194,9 @@
   {
     "App Name": "BHX",
     "Description": "Twitter, with added features such as custom fonts, video saving, no ads, tabs customization, and more!",
-    "Version": "10.20-4.2",
+    "Version": "10.21.1-4.2",
     "Source/Maintainer": "BandarHL/AppDB/Manpreet Singh @thisismanpreeets/DPixel/CydiaAbdullah/zxcvbn's tweaked IPAs/TrollStore AppsUpdates",
-    "Last Updated": "12-16-2023",
+    "Last Updated": "12-19-2023",
     "Status": "✅ 👍"
   },
   {
@@ -210,9 +210,9 @@
   {
     "App Name": "BHTikTokPlus",
     "Description": "This is possibly the finest TikTok enhancement currently available before BHTikTokLRD : Featuring a completely revamped user interface, enhanced stability, works if sideloaded, etc. For additional information, visit dayanch96's GitHub repository.Note: Fixed for non-TrollStore users.",
-    "Version": "dayanch96 : 2.3-32.5.0 / BandarHL : 0.0.1-30.8.0",
+    "Version": "dayanch96 : 2.3-32.6.0 / BandarHL : 0.0.1-30.8.0",
     "Source/Maintainer": "BandarHL/dayanch96/zxcvbn's tweaked IPAs/mbs0ft",
-    "Last Updated": "dayanch96 : 12-18-2023 / BandarHL : 08-19-2023",
+    "Last Updated": "dayanch96 : 12-19-2023 / BandarHL : 08-19-2023",
     "Status": "✅ 👍"
   },
   {
@@ -610,9 +610,9 @@
   {
     "App Name": "InfusePro",
     "Description": "Fancy media/video player, cracked for premium.Full app description here",
-    "Version": "7.6.4",
+    "Version": "7.6.5",
     "Source/Maintainer": "DPixel/AppDB/zxcvbn’s tweaked IPAs/iApps/HertzSign iPA Library",
-    "Last Updated": "11-29-2023",
+    "Last Updated": "12-19-2023",
     "Status": "✅ 👍"
   },
   {
@@ -714,9 +714,9 @@
   {
     "App Name": "iTorrent",
     "Description": "Probably the best Torrent client for iOS 9.3 and up.",
-    "Version": "v1.8.3 (20.0) / v1.9 (23.0)",
+    "Version": "v1.8.3 (20.0) / v1.9 (25)",
     "Source/Maintainer": "XITRIX",
-    "Last Updated": "11-12-2023",
+    "Last Updated": "12-19-2023",
     "Status": "✅ 👍"
   },
   {
@@ -826,7 +826,7 @@
   {
     "App Name": "Memrise",
     "Description": "Injected with Premium.Unlike other language learning apps,Memriseis built around mastering specific conversations, allowing you to choose the topics that matter most to you and confidently engage in real-life dialogues.",
-    "Version": "2023.12.6",
+    "Version": "2023.12.11",
     "Source/Maintainer": "AppDB/Strejda603/Jimbos iPA Library/DPixel",
     "Last Updated": "12-08-2023",
     "Status": "✅"
@@ -901,6 +901,14 @@
     "Version": "14.5",
     "Source/Maintainer": "zxcvbn's tweaked IPAs",
     "Last Updated": "12-12-2023",
+    "Status": "✅"
+  },
+  {
+    "App Name": "nPlayerPlus",
+    "Description": "Having received positive reviews about nPlayer, I'm posting it here as a potential alternative of Infuse!",
+    "Version": "3.12.17",
+    "Source/Maintainer": "iOSGods!",
+    "Last Updated": "12-19-2023",
     "Status": "✅"
   },
   {
@@ -1112,6 +1120,14 @@
     "Status": "✅"
   },
   {
+    "App Name": "Shadowrocket",
+    "Description": "This linkallow to use or potentially unlock the premium functions of many applications. Use only if you're well-versed with the process.",
+    "Version": "2.2.41",
+    "Source/Maintainer": "Qamislo - Apps",
+    "Last Updated": "12-19-2023",
+    "Status": "✅"
+  },
+  {
     "App Name": "SharkforMessenger",
     "Description": "Facebook Messenger, injected with Shark by Michael Lema",
     "Version": "411.0",
@@ -1266,9 +1282,9 @@
   {
     "App Name": "TempoPro",
     "Description": "Tempo, with pro features unlocked,not confirmed working on iOS 14.x.",
-    "Version": "4.47.0",
+    "Version": "4.48.0",
     "Source/Maintainer": "DPixel",
-    "Last Updated": "12-08-2023",
+    "Last Updated": "12-19-2023",
     "Status": "✅"
   },
   {
@@ -1520,6 +1536,14 @@
     "Status": "✅"
   },
   {
+    "App Name": "VPNPremium",
+    "Description": "If other VPNs from the repo aren't working,this oneseems to be functioning perfectly well on Trollstore.",
+    "Version": "3.17",
+    "Source/Maintainer": "HertzSign iPA Library",
+    "Last Updated": "12-19-2023",
+    "Status": "✅ 👍"
+  },
+  {
     "App Name": "VSCOLion",
     "Description": "VSCO, injected with the tweak Lion by Michael Lema. Allows for saving pretty much all media by long-pressing on them.Few things to note: If you're jailbroken, fully disable tweak injection into VSCO using Choicy. Signing in through Apple and Google don't work (clicking Apple does nothing, clicking Google causes a crash). If you need to sign in this way, create a backup of VSCO from the App Store using either Apps Manager or Crane, depending on if your phone is jailbroken or not, while signed in before installing this ipa through TrollStore. This version also does not include dark mode. All other features should be the same",
     "Version": "1.4-282.0",
@@ -1537,7 +1561,7 @@
   },
   {
     "App Name": "Watusi3",
-    "Description": "WhatsApp, injected with Watusiv1.2.14, Stalkyv4.1.24, OnlineNotifyv3.4.4. Notifications and iCloud backups work with TrollStore",
+    "Description": "WhatsApp, injected with Watusiv1.2.14, Stalkyv4.1.24, OnlineNotifyv3.4.4. Notifications and iCloud backups work with TrollStore.Note: Connection confirmation and \\\"unofficial\\\" message issue have been fixed.",
     "Version": "23.25.81-1.2.14-3.4.4",
     "Source/Maintainer": "CyPwn IPA Library/DPixel/MeemNon/zxcvbn’s tweaked IPAs/FouadRaheb",
     "Last Updated": "12-16-2023",
