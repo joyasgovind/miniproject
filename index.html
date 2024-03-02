@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>error</title>
+  <title>died</title>
   <style>
     body {
       margin: 0;
@@ -31,33 +31,17 @@
       margin-bottom: 30px;
     }
 
-    .animation-container {
-      position: relative;
+    .launching-soon {
+      font-size: 1.2em;
+      animation: pulse 1.5s infinite alternate;
     }
 
-    .loader {
-      width: 50px;
-      height: 50px;
-      border: 5px solid transparent;
-      border-top-color: #3498db;
-      border-radius: 50%;
-      animation: spin 1s infinite linear;
-    }
-
-    .monitor {
-      position: absolute;
-      width: 80px;
-      height: 55px;
-      background-color: #4CAF50;
-      border-radius: 10px;
-      top: -30px;
-      left: calc(50% - 40px);
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
-    }
-
-    @keyframes spin {
+    @keyframes pulse {
+      0% {
+        opacity: 0.5;
+      }
       100% {
-        transform: rotate(360deg);
+        opacity: 1;
       }
     }
 
@@ -69,29 +53,13 @@
       p {
         font-size: 1em;
       }
-
-      .loader {
-        width: 40px;
-        height: 40px;
-      }
-
-      .monitor {
-        width: 60px;
-        height: 40px;
-        top: -25px;
-        left: calc(50% - 30px);
-      }
     }
   </style>
 </head>
 <body>
   <div class="content">
     <h1>Website Down :/</h1>
-    <p>Stay tuned! APP is launching soon.</p>
-    <div class="animation-container">
-      <div class="loader"></div>
-      <div class="monitor"></div>
-    </div>
+    <p>Stay tuned! App is <span class="launching-soon">launching soon</span>.</p>
   </div>
 </body>
 </html>
